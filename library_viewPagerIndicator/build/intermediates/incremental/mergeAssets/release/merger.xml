@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="E:\my pprogram\newandroid\main\new\NewMess\library_viewPagerIndicator\src\main\assets"/></dataSet><dataSet config="release"><source path="E:\my pprogram\newandroid\main\new\NewMess\library_viewPagerIndicator\src\release\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/zouxiaobang/Documents/RunTime/library_viewPagerIndicator/src/main/assets"/></dataSet><dataSet config="release"><source path="/Users/zouxiaobang/Documents/RunTime/library_viewPagerIndicator/src/release/assets"/></dataSet></merger>

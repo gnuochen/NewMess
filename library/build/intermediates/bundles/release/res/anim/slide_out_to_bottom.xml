@@ -19,4 +19,4 @@
     android:duration="@android:integer/config_longAnimTime"
     android:fromYDelta="0"
     android:toYDelta="100%p" />
-<!-- From: file:/E:/my%20pprogram/newandroid/main/new/NewMess/library/src/main/res/anim/slide_out_to_bottom.xml -->
+<!-- From: file:/Users/zouxiaobang/Documents/RunTime/library/src/main/res/anim/slide_out_to_bottom.xml -->

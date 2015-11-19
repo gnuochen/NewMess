@@ -41,11 +41,12 @@ import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MyInfoActivity extends BaseActivity {
+public class MyInfoActivity extends BaseActivity implements View.OnClickListener{
 
 
     private TextView bt_bagOrder,bt_bagAppraise,bt_backBag,bt_goodFood,bt_buyedFood,
-            bt_personInfo,bt_changePassword,bt_backLogin,tv_user_type;
+            bt_personInfo,bt_changePassword,bt_backLogin,tv_user_type,bt_registe_new_user;
+    private Button bt_user_land;
     private SharedPreferences sp;       //下次打开时显示上次的账号和密码
     public static Boolean registeToFirst = false;
     public static Boolean isLogined = false;       //判断是否已经登录
@@ -57,12 +58,24 @@ public class MyInfoActivity extends BaseActivity {
     private LinearLayout ll_my_info_student, ll_my_info_shangjia,ll_my_info;
     private ImageView ib_myinfo_touxiang;
     private String loginType = "学生";
+    private static Boolean isExit = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_info);
 
+        initActivity();     //初始化我的信息界面
+        initLogin();        //初次进入时的登录界面
+        setLoginEt();           //从注册页面进入主页面时所做的事情
+
+        getDataFromServlet();       //将过期的订单转入到评价订单和买过的订单中
+    }
+
+    /**
+     * 初始化我的信息界面
+     */
+    private void initActivity() {
         ll_my_info = (LinearLayout)findViewById(R.id.ll_my_info);
         ll_my_info_student = (LinearLayout)findViewById(R.id.ll_my_info_student);
         ll_my_info_student.setVisibility(View.GONE);
@@ -79,6 +92,8 @@ public class MyInfoActivity extends BaseActivity {
         bt_backLogin = (TextView)findViewById(R.id.bt_backLogin);
         ib_myinfo_touxiang = (ImageView)findViewById(R.id.ib_myinfo_touxiang);
         tv_user_type = (TextView)findViewById(R.id.tv_user_type);
+        bt_registe_new_user = (TextView)findViewById(R.id.bt_user_registe);
+        bt_user_land = (Button)findViewById(R.id.bt_user_login);
 
         //初始化设置头像
         Bitmap touxiang = BitmapFactory.decodeFile(sp.getString("picPath", ""));
@@ -86,99 +101,23 @@ public class MyInfoActivity extends BaseActivity {
             ib_myinfo_touxiang.setImageBitmap(touxiang);
         }
 
-        /**
-         * 头像点击事件
-         */
-        ib_myinfo_touxiang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivityForResult(new Intent(MyInfoActivity.this, MyAllInfo.class), 0);
-            }
-        });
-        /**
-         *订单详情
-         */
-        final View v_bagOrder = this.getLayoutInflater().inflate(R.layout.popup_bag_order,null);
-        bt_bagOrder.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MyInfoActivity.this, BagOrder.class));
-            }
-        });
+        bt_bagOrder.setOnClickListener(this);
+        bt_bagAppraise.setOnClickListener(this);
+        ib_myinfo_touxiang.setOnClickListener(this);
+        bt_backBag.setOnClickListener(this);
+        bt_goodFood.setOnClickListener(this);
+        bt_buyedFood.setOnClickListener(this);
+        bt_personInfo.setOnClickListener(this);
+        bt_changePassword.setOnClickListener(this);
+        bt_backLogin.setOnClickListener(this);
+        bt_registe_new_user.setOnClickListener(this);
+        bt_user_land.setOnClickListener(this);
+    }
 
-        /**
-         * 评价订单
-         */
-        bt_bagAppraise.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MyInfoActivity.this, EvaluateOrder.class));
-            }
-        });
-
-        /**
-         * 退订
-         *
-         */
-        bt_backBag.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MyInfoActivity.this, BackOrder.class));
-            }
-        });
-
-
-        /**
-         * 已收藏食品
-         */
-        bt_goodFood.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MyInfoActivity.this, MyCollection.class));
-            }
-        });
-        /**
-         * 已购买食品
-         */
-        bt_buyedFood.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MyInfoActivity.this, MyBuyed.class));
-            }
-        });
-        /**
-         * 我的详细信息
-         */
-        bt_personInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MyInfoActivity.this, MyAllInfo.class));
-            }
-        });
-        /**
-         * 修改密码
-         */
-        bt_changePassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivityForResult(new Intent(MyInfoActivity.this, ChangePass.class), 0);
-            }
-        });
-        /**
-         * 退出登录按钮
-         */
-        bt_backLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MyInfoActivity.isLogined = false;
-                SharedPreferences.Editor editor = sp.edit();
-                editor.putBoolean("islogined",isLogined);
-                editor.commit();
-                startActivity(new Intent(MyInfoActivity.this, FirstActivity.class));
-                MyInfoActivity.this.finish();
-            }
-        });
-
+    /**
+     * 初次进入时的登录界面
+     */
+    private void initLogin() {
         et_user_password = (EditText)findViewById(R.id.et_user_password);
         et_user_name = (EditText)findViewById(R.id.et_user_name);
         et_user_name.addTextChangedListener(new NameChangeListener());
@@ -188,9 +127,8 @@ public class MyInfoActivity extends BaseActivity {
         et_user_password.setText(sp.getString("userpassword", ""));
         cb_remery_user_password.setChecked(sp.getBoolean("remorypassword", false));
         drawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
-        /**
-         * 说明：点击“我的”按钮之后，若是没有登录，则进入登录界面，而若是已登录，则进入“我的信息”界面
-         */
+
+        //说明：点击“我的”按钮之后，若是没有登录，则进入登录界面，而若是已登录，则进入“我的信息”界面
         isLogined = sp.getBoolean("islogined",false);
         if (isLogined){
             //若是已经登录过的，则直接在主界面而不再出现登录界面
@@ -200,9 +138,6 @@ public class MyInfoActivity extends BaseActivity {
                 ll_my_info.invalidate();
                 tv_user_type.setText("student");
             }else if (loginType.equals("商家")){
-                /**
-                 * 进入商家界面
-                 */
                 ll_my_info_shangjia.setVisibility(View.VISIBLE);
                 ll_my_info.invalidate();
                 tv_user_type.setText("shopman");
@@ -210,41 +145,42 @@ public class MyInfoActivity extends BaseActivity {
         } else {
             drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN);
         }
-        setLoginEt();           //从注册页面进入主页面时所做的事情
-        TextView bt_registe_new_user = (TextView)findViewById(R.id.bt_user_registe);
-        bt_registe_new_user.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //进入注册页面
-                Intent intent = new Intent(MyInfoActivity.this, RegisteActivity.class);
-                startActivity(intent);
-                MyInfoActivity.this.finish();
-                overridePendingTransition(R.anim.my_info_in, R.anim.my_info_out);
-            }
-        });
-        Button bt_user_land = (Button)findViewById(R.id.bt_user_login);
-        bt_user_land.setOnClickListener(new LoginButtonListener());
-
-        getDataFromServlet();       //将过期的订单转入到评价订单和买过的订单中
     }
+
+    /**
+     * 若是从注册页面返回主页，则为自动为登录界面的账号和密码填写内容
+     */
+    public void setLoginEt() {
+        if (registeToFirst) {
+            Intent intent = getIntent();
+            Bundle data = intent.getExtras();
+            String name = data.getString("user_name");
+            et_user_name.setText(name);
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN);
+        }
+    }
+
+    /**
+     * 对账户密码进行判断后是否进入我的信息页面
+     */
     public void judge(){
         NMParameters loginParames = new NMParameters();
         loginParames.add("action", "login");
         loginParames.add("name",et_user_name.getText().toString());
-        loginParames.add("password",et_user_password.getText().toString());
-       // getData(TAG_LOGIN, Constant.URL_FOODS, loginParames, "POST");
+        loginParames.add("password", et_user_password.getText().toString());
+        // getData(TAG_LOGIN, Constant.URL_FOODS, loginParames, "POST");
         /***
          * 测试，以后删掉
          */
         isLoginState = true;
-        if (isLoginState){
+        if (isLoginState) {
             isLogined = true;       //登录成功
             remeryUserPassword();               //是否记住密码
             Handler handler = new Handler();
             handler.postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    System.out.println("——————————————"+loginType);
+                    System.out.println("——————————————" + loginType);
                     drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                     //进入我的信息界面
                     //if (loginType.equals("学生")){
@@ -253,7 +189,7 @@ public class MyInfoActivity extends BaseActivity {
                         ll_my_info.invalidate();
                         tv_user_type.setText("student");
                         //}else if (loginType.equals("商家")){
-                    } else if (et_user_name.getText().toString().equals("商家")){
+                    } else if (et_user_name.getText().toString().equals("商家")) {
                         /**
                          * 进入商家界面
                          */
@@ -265,6 +201,85 @@ public class MyInfoActivity extends BaseActivity {
             }, 300);
         }
     }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.bt_bagOrder:      //订单详情
+                startActivity(new Intent(MyInfoActivity.this, BagOrder.class));
+                break;
+            case R.id.bt_bagAppraise:       //评价订单
+                startActivity(new Intent(MyInfoActivity.this, EvaluateOrder.class));
+                break;
+            case R.id.bt_backBag:       //退订
+                startActivity(new Intent(MyInfoActivity.this, BackOrder.class));
+                break;
+            case R.id.bt_goodFood:      //已收藏食品
+                startActivity(new Intent(MyInfoActivity.this, MyCollection.class));
+                break;
+            case R.id.bt_buyedFood:     //已购买食品
+                startActivity(new Intent(MyInfoActivity.this, MyBuyed.class));
+                break;
+            case R.id.bt_personInfo:        //我的详细信息
+                startActivity(new Intent(MyInfoActivity.this, MyAllInfo.class));
+                break;
+            case R.id.bt_changePassword:        //修改密码
+                startActivityForResult(new Intent(MyInfoActivity.this, ChangePass.class), 0);
+                break;
+            case R.id.bt_backLogin:     //退出登录按钮
+                MyInfoActivity.isLogined = false;
+                SharedPreferences.Editor editor = sp.edit();
+                editor.putBoolean("islogined", isLogined);
+                editor.commit();
+                startActivity(new Intent(MyInfoActivity.this, FirstActivity.class));
+                MyInfoActivity.this.finish();
+                break;
+            case R.id.bt_user_registe:      //注册按钮
+                Intent intent = new Intent(MyInfoActivity.this, RegisteActivity.class);
+                startActivity(intent);
+                MyInfoActivity.this.finish();
+                overridePendingTransition(R.anim.my_info_in, R.anim.my_info_out);
+                break;
+            case R.id.bt_user_login:        //登录按钮
+                judge();
+                break;
+        }
+    }
+
+    /**
+     * 当用户名输入框删除输入时响应：
+     * 既删除用户名时顺便删除密码
+     */
+    private class NameChangeListener implements TextWatcher {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            et_user_password.setText("");
+        }
+        @Override
+        public void afterTextChanged(Editable s) {}
+    }
+
+    /**
+     * 是否记住密码
+     */
+    private void remeryUserPassword(){
+        SharedPreferences.Editor editor = sp.edit();
+        //保存账号，下次启动时使用
+        editor.putString("username",et_user_name.getText().toString());
+        //判断是否保存密码，下次启动时使用
+        Boolean status = cb_remery_user_password.isChecked();
+        editor.putString("userpassword", "");
+        if (status){
+            editor.putString("userpassword",et_user_password.getText().toString());
+        }
+        //保存是否记住密码的状态
+        editor.putBoolean("remorypassword",cb_remery_user_password.isChecked());
+        editor.putBoolean("islogined", isLogined);      //是否已登录
+        editor.commit();
+    }
+
     @Override
     public void handleMsg(Message msg) {
         Bundle data = msg.getData();
@@ -306,54 +321,9 @@ public class MyInfoActivity extends BaseActivity {
 
     }
 
-    private class NameChangeListener implements TextWatcher {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            et_user_password.setText("");
-        }
-        @Override
-        public void afterTextChanged(Editable s) {}
-    }
 
-    private class LoginButtonListener implements View.OnClickListener{
-        @Override
-        public void onClick(View v) {
-            judge();
-        }
-    }
 
-    /**
-     * 是否记住密码
-     */
-    private void remeryUserPassword(){
-        SharedPreferences.Editor editor = sp.edit();
-        //保存账号，下次启动时使用
-        editor.putString("username",et_user_name.getText().toString());
-        //判断是否保存密码，下次启动时使用
-        Boolean status = cb_remery_user_password.isChecked();
-        editor.putString("userpassword", "");
-        if (status){
-            editor.putString("userpassword",et_user_password.getText().toString());
-        }
-        //保存是否记住密码的状态
-        editor.putBoolean("remorypassword",cb_remery_user_password.isChecked());
-        editor.putBoolean("islogined", isLogined);
-        editor.commit();
-    }
-    /**
-     * 若是从注册页面返回主页，则为自动为登录界面的账号和密码填写内容
-     */
-    public void setLoginEt() {
-        if (registeToFirst) {
-            Intent intent = getIntent();
-            Bundle data = intent.getExtras();
-            String name = data.getString("user_name");
-            et_user_name.setText(name);
-            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN);
-        }
-    }
+
 
 
     @Override
@@ -363,7 +333,6 @@ public class MyInfoActivity extends BaseActivity {
         }
         return true;
     }
-    private static Boolean isExit = false;
 
     private void exitBy2Click() {
         Timer tExit = null;

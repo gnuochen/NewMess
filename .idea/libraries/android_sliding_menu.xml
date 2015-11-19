@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="android-sliding-menu">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/libs/android-sliding-menu.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
