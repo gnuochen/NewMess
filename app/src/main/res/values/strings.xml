@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">饭友</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_first">FirstActivity</string>
+    <string name="title_activity_registe_sliding">RegisteSlidingActivity</string>
+    <string name="title_activity_main_">Main_Activity</string>
+    <string name="title_activity_my_info">MyInfoActivity</string>
+    <string name="title_activity_registe">RegisteActivity</string>
+    <string name="title_activity_goods">GoodsActivity</string>
+    <string name="title_activity_shop">SubcategoryActivity</string>
+    <string name="title_activity_body">BodyActivity</string>
+    <string name="title_activity_show_big_pictrue_a">ShowBigPictrueActivity</string>
+    <string name="title_activity_square">SquareActivity</string>
+    <string name="title_activity_bag_order">BagOrder</string>
+    <string name="title_activity_evaluate_order">EvaluateOrder</string>
+    <string name="title_activity_atools">AToolsActivity</string>
+    <string name="title_activity_photo">PhotoActivity</string>
+    <string name="title_activity_back_order">BackOrder</string>
+</resources>

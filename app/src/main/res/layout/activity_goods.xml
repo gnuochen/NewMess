@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.r_time_run.newmess.GoodsActivity">
+    <TextView
+        android:background="#FF8462"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="食堂信息"
+        android:textSize="20sp"
+        android:textColor="#000000"/>
+
+    <TextView
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="昔日帝王宫殿,如今豪华宾馆. 北京贵宾楼饭店     昔日帝王宫殿,如今豪华宾馆. 北京贵宾楼饭店 "
+        android:textSize="18sp"
+        android:textColor="#000000"/>
+
+<ListView
+    android:id="@+id/listView"
+    android:background="#FFFFFF"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+</LinearLayout>

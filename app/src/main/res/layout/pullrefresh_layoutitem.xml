@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/viewPager_itemone_listView_viewPager_titleheadergrideview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 头部 viewPager3D翻转 -->
+        <include
+            layout="@layout/main_search"/>
+        <include
+            android:id="@+id/viewPager_itemone_listView_viewPager_itemheader"
+            layout="@layout/homeactivity_viewpageritem_itemone_header"
+            android:layout_marginTop="2dp"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+
+
+        <include
+            android:id="@+id/viewpager_itmone_guideandeclock"
+            layout="@layout/homeactivity_viewpageritem_itemone_guideandclck"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

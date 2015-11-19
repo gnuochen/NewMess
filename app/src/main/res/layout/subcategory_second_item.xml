@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/rightmenu_item_imageview"
+        android:layout_width="65dp"
+        android:layout_height="55dp"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:id="@+id/tv_subcategory_foodname"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:ellipsize="marquee"
+        android:maxLines="1"
+        android:paddingLeft="10dp"
+        android:gravity="center"
+        android:text="酸菜肉丝饭"
+        android:textSize="15sp"
+        android:textColor="#C0000000"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/rightmenu_item_imageview"
+        android:layout_toEndOf="@+id/rightmenu_item_imageview" />
+
+    <TextView
+        android:id="@+id/tv_subcategory_price"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:maxLines="1"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="16sp"
+        android:text="10 ¥"
+        android:textColor="#FF8C00"
+        android:layout_alignBottom="@+id/tv_subcategory_address"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/tv_subcategory_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第一食堂潮汕小炒"
+        android:paddingLeft="10dp"
+        android:singleLine="true"
+        android:textSize="13sp"
+        android:layout_below="@+id/tv_subcategory_foodname"
+        android:layout_toRightOf="@+id/rightmenu_item_imageview"
+        android:layout_toEndOf="@+id/rightmenu_item_imageview" />
+
+    <!--<ImageView-->
+        <!--android:id="@+id/im_subcategory_tuijian"-->
+
+        <!--android:layout_width="60dp"-->
+        <!--android:layout_height="60dp"-->
+        <!--android:src="@drawable/subcategory_tuijian"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_toRightOf="@+id/tv_subcategory_price"-->
+        <!--android:layout_toEndOf="@+id/tv_subcategory_price" />-->
+
+</RelativeLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:background="#fb894d"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:padding="8dp">
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:focusable="true"
+        android:background="@drawable/corners5"
+        android:focusableInTouchMode="true">
+        <ImageView
+            android:id="@+id/jd_home_title_img"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:scaleType="centerInside"
+            android:src="@drawable/logo" />
+        <TextView
+            android:id="@+id/tv_goto_foodsquare"
+            android:layout_width="0dp"
+            android:layout_weight="8"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:text="你所在大学时五邑大学"
+            android:clickable="true"
+            />
+    </LinearLayout>
+
+</LinearLayout>

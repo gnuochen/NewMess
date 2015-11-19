@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/shop_header_return"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="今日好店"
+        android:textSize="20sp"
+        android:background="#95de5943"
+        android:textStyle="bold"
+        android:drawableLeft="@drawable/tb_icon_actionbar_back"/>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        >
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="综合"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_height="fill_parent"
+            android:background="#33444444"/>
+        <TextView
+            android:layout_width="2dp"
+            android:layout_height="fill_parent" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:text="推荐度"
+            android:textStyle="bold"
+            android:layout_height="fill_parent"
+            android:background="#33444444"/>
+    </LinearLayout>
+
+</LinearLayout>

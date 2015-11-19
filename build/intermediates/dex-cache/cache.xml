@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\pre-dexed\debug\classes-60dccc36f5e0a679db6f420fdf849ca1376d8f54.jar" />
+    </item>
+    <item
+        jar="E:\my pprogram\newandroid\main\new\NewMess6\app\libs\android-sliding-menu.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="42c243486cf4bb80d1ef424ab4f31b0103688979">
+        <dex dex="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\pre-dexed\debug\android-sliding-menu-494941cae5ea1749dd60a3216f8b3481f26d1dad.jar" />
+    </item>
+    <item
+        jar="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\pre-dexed\debug\classes-67fe08a8511a1803acec440e227c0e791fa2d053.jar" />
+    </item>
+    <item
+        jar="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\exploded-aar\NewMess6\library_viewPagerIndicator\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="11dceab689d86128c361a01badc5d71f67601bc1">
+        <dex dex="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\pre-dexed\debug\classes-fcaab74918bd4daa14685fbc0dd8b138740517a1.jar" />
+    </item>
+    <item
+        jar="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\exploded-aar\NewMess6\library\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="b9a9f0f04ca050ead3996c3cb28352559969ea0a">
+        <dex dex="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\pre-dexed\debug\classes-2b453e61ebeeee5afc1dfc1dcf6b80d16b5fd2ca.jar" />
+    </item>
+    <item
+        jar="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-647e4af337943094c6910f4c5d464285b9aec173.jar" />
+    </item>
+    <item
+        jar="E:\my pprogram\newandroid\main\new\NewMess6\app\libs\apache-mime4j-0.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="12e7270b1819bae792c9a9e5e8076ebbcdaaac4b">
+        <dex dex="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\pre-dexed\debug\apache-mime4j-0.6-0dacf31cebf0301d6e482f6026d9f1d920168a8c.jar" />
+    </item>
+    <item
+        jar="E:\my pprogram\newandroid\main\new\NewMess6\app\libs\httpmime-4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e0340636480aea12d38b0fb6a6ed1f06c5c79c5a">
+        <dex dex="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\pre-dexed\debug\httpmime-4.0-9662af66bc00059aa97bc7c29c5dec412156270f.jar" />
+    </item>
+    <item
+        jar="E:\Sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="E:\my pprogram\newandroid\main\new\NewMess6\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-fe8ea765e7c6238e26597a51f0dbac4b9546a50c.jar" />
+    </item>
+
+</items>
