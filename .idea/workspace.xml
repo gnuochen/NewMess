@@ -9,8 +9,7 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c92119b-260d-454f-af18-8c5f6da1babe" name="Default" comment="第一次修改">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="1c92119b-260d-454f-af18-8c5f6da1babe" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RunTime.iws" />
@@ -2991,7 +2990,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447903837339</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="第二次修改">
+      <created>1447923200209</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1447923200209</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3040,7 +3045,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="第一次修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="第一次修改" />
+    <MESSAGE value="第二次修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="第二次修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
