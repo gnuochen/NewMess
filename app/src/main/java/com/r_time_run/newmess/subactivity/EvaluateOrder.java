@@ -29,100 +29,26 @@ public class EvaluateOrder extends Activity {
     private TextView bt_evaluateOrder_back;
     private ListView lv_evaluateOrder;
     private PopupWindow popup_evaluateOrder;
-    private String[] titles;    //标题
-    private int[] images;       //图片
-    private String[] dirs;      //地址
-    private String[] times;     //打包时间
-    private String[] praises;      //点赞数
-    private String[] buys;         //购买数
-    private String[] prices;        //价钱
-    private String[] hours;
-    private String[] minutes;
-    int index = 0;
-    SQLiteDatabase db;
+    private List<Map<String, Object>> listItems;
+    private View popup_evaluateOrderView;
+    private SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evaluate_order);
 
-        bt_evaluateOrder_back = (TextView)findViewById(R.id.bt_evaluateorder_back);
-        lv_evaluateOrder = (ListView)findViewById(R.id.lv_evaluateorder);
-        db = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString() + "/newmessfoodbag.db3", null);
-        /**
-         * 返回键
-         */
-        bt_evaluateOrder_back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EvaluateOrder.this.finish();
-            }
-        });
-
         getDataFromServlet();           //从服务器中获取数据并填充到数组中
-        List<Map<String, Object>> listItems = new ArrayList<>();
-        if (titles == null)
-            setDefaultData();
-        for (int i = 0;i < titles.length;i++){
-            Map<String,Object> item = new HashMap<String, Object>();
-            item.put("image",images[i]);
-            item.put("title",titles[i]);
-            item.put("dir",dirs[i]);
-            item.put("time",times[i]);
-            listItems.add(item);
+        initActivity();         //初始化订单详情页面
+
+        if (listItems != null){
+            SimpleAdapter simpleAdapter = new SimpleAdapter(this,listItems,
+                    R.layout.simple_item2,
+                    new String[]{"image","title","dir","time"},
+                    new int[]{R.id.iv_mycollection_image, R.id.tv_mycollection_title, R.id.tv_mycollection_dir, R.id.tv_mycollection_time});
+            lv_evaluateOrder.setAdapter(simpleAdapter);
         }
-        SimpleAdapter simpleAdapter = new SimpleAdapter(this,listItems,
-                R.layout.simple_item2,
-                new String[]{"image","title","dir","time"},
-                new int[]{R.id.iv_mycollection_image, R.id.tv_mycollection_title, R.id.tv_mycollection_dir, R.id.tv_mycollection_time});
-        lv_evaluateOrder.setAdapter(simpleAdapter);
-        final View popup_evaluateOrderView = this.getLayoutInflater().inflate(R.layout.popup_order_evaluate, null);
-        lv_evaluateOrder.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                popup_evaluateOrder = new PopupWindow(popup_evaluateOrderView, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-
-                Bundle data = new Bundle();
-                data.putString("title", titles[position]);
-                data.putInt("image", images[position]);
-                data.putString("dir", dirs[position]);
-                data.putString("time", times[position]);
-                data.putString("praise", praises[position]);
-                data.putString("buy", buys[position]);
-                data.putString("price", prices[position]);
-                data.putString("hour", hours[position]);
-                data.putString("minute", minutes[position]);
-                PopupWindowManager popupWindowManager = new PopupWindowManager(EvaluateOrder.this, popup_evaluateOrderView, data);
-                popupWindowManager.setDataToView();
-
-                ScrollView sv_bagDialog = (ScrollView) popup_evaluateOrderView.findViewById(R.id.sv_bagDialog);
-                sv_bagDialog.startAnimation(AnimationUtils.loadAnimation(EvaluateOrder.this, R.anim.my_info_in));
-                popup_evaluateOrder.setFocusable(true);
-                popup_evaluateOrder.showAtLocation(view, Gravity.BOTTOM, 0, 0);
-                popup_evaluateOrderView.findViewById(R.id.bt_bagOrder_close).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        popup_evaluateOrder.dismiss();
-                    }
-                });
-                popup_evaluateOrderView.findViewById(R.id.bt_pop_collection).setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        int index = 0;
-                        Cursor cursor = db.rawQuery("select * from food_evaluate"
-                                , null);
-
-                        while (cursor.moveToNext()) {
-                            if (index == position) {
-                                setSaveData(cursor);
-                            }
-                            index ++;
-                        }
-                        popup_evaluateOrder.dismiss();
-                    }
-                });
-            }
-        });
+        lv_evaluateOrder.setOnItemClickListener(new ItemClickListener());
 
         /**
          * 该popupWindow"页面"能接受点击事件
@@ -144,48 +70,48 @@ public class EvaluateOrder extends Activity {
 
     }
 
+    /**
+     * 初始化订单详情页面
+     */
+    private void initActivity() {
+        bt_evaluateOrder_back = (TextView)findViewById(R.id.bt_evaluateorder_back);
+        lv_evaluateOrder = (ListView)findViewById(R.id.lv_evaluateorder);
+        //没有订单时显示
+        lv_evaluateOrder.setEmptyView(findViewById(R.id.tv_empty_item));
+        db = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString() + "/newmessfoodbag.db3", null);
+        popup_evaluateOrderView = this.getLayoutInflater().inflate(R.layout.popup_order_evaluate, null);
+        //返回键
+        bt_evaluateOrder_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EvaluateOrder.this.finish();
+            }
+        });
+    }
+
+    /**
+     * 从服务器获取数据填写入该数组中
+     */
     private void getDataFromServlet() {
-        /**
-         * 从服务器获取数据填写入该数组中
-         */
         SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString() + "/newmessfoodbag.db3", null);
-        int cursorNum = 0;
         try {
             Cursor cursor = db.rawQuery("select * from food_evaluate", null);
-            cursorNum = cursor.getCount();
-            titles = new String[cursorNum];
-            images = new int[cursorNum];
-            dirs = new String[cursorNum];
-            times = new String[cursorNum];
-            praises = new String[cursorNum];
-            prices = new String[cursorNum];
-            buys = new String[cursorNum];
-            hours = new String[cursorNum];
-            minutes = new String[cursorNum];
+            listItems = new ArrayList<>();
             while (cursor.moveToNext()) {
-                titles[index] = cursor.getString(0);
-                dirs[index] = cursor.getString(1);
-                buys[index] = cursor.getString(2);
-                prices[index] = cursor.getString(3);
-                times[index] = cursor.getString(5)+"月"+cursor.getString(6)+"日 "+cursor.getString(7)+":"+cursor.getString(8);
-                images[index] = R.drawable.food;
-                hours[index] = cursor.getString(7);
-                minutes[index] = cursor.getString(8);
-                System.out.println("!!!" + titles[index] + "." + dirs[index] + ":" + buys[index] + ":");
-                index++;
+                Map<String,Object> item = new HashMap<String, Object>();
+                item.put("image",R.drawable.food);
+                item.put("title",cursor.getString(0));
+                item.put("dir",cursor.getString(1));
+                item.put("time",cursor.getString(5)+"月"+cursor.getString(6)+"日 "+cursor.getString(7)+":"+cursor.getString(8));
+                item.put("buys",cursor.getString(2));
+                item.put("prices",cursor.getString(3));
+                item.put("hours", cursor.getString(7));
+                item.put("minutes", cursor.getString(8));
+                listItems.add(item);
             }
         } catch (SQLiteException se) {
 
         }
-    }
-    private void setDefaultData() {
-        titles = new String[]{"您还没有打包任何东西"};
-        images = new int[]{R.drawable.food};
-        dirs = new String[]{""};
-        times = new String[]{""};
-        praises = new String[]{""};
-        buys = new String[]{""};
-        prices = new String[]{""};
     }
 
     /**
@@ -206,7 +132,6 @@ public class EvaluateOrder extends Activity {
         String day = cursor.getString(6);
         String hour = cursor.getString(7);
         String minute = cursor.getString(8);
-        System.out.println("!!!!"+hour+":"+minute);
 
         try {
             insertData(db, foodName, foodLocation, foodNum, foodPrice, year, month, day, hour, minute);
@@ -216,8 +141,68 @@ public class EvaluateOrder extends Activity {
         }
     }
 
+    /**
+     * 将数据插入到收藏数据库中
+     * @param db
+     * @param foodName
+     * @param foodLocation
+     * @param foodNum
+     * @param foodPrice
+     * @param year
+     * @param month
+     * @param day
+     * @param hour
+     * @param minute
+     */
     private void insertData(SQLiteDatabase db, String foodName, String foodLocation, String foodNum, String foodPrice,String year,String month,String day,String hour,String minute) {
         db.execSQL("insert into food_collection values(?,?,?,?,?,?,?,?,?)", new String[]{foodName, foodLocation, foodNum, foodPrice, year + "", month + "", day + "", hour + "", minute + ""});
-        System.out.println("!!!!!插入成功");
+    }
+
+    private class ItemClickListener implements ListView.OnItemClickListener{
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+            popup_evaluateOrder = new PopupWindow(popup_evaluateOrderView, LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+
+            Bundle data = new Bundle();
+            data.putString("title", (String) listItems.get(position).get("title"));
+            data.putInt("image", R.drawable.food);
+            data.putString("dir", (String) listItems.get(position).get("dir"));
+            data.putString("time", (String) listItems.get(position).get("time"));
+            data.putString("praise", (String) listItems.get(position).get("praise"));
+            data.putString("buy", (String) listItems.get(position).get("buys"));
+            data.putString("price", (String) listItems.get(position).get("prices"));
+            data.putString("hour", (String) listItems.get(position).get("hours"));
+            data.putString("minute",(String) listItems.get(position).get("minutes"));
+            PopupWindowManager popupWindowManager = new PopupWindowManager(EvaluateOrder.this, popup_evaluateOrderView, data);
+            popupWindowManager.setDataToView();
+
+            ScrollView sv_bagDialog = (ScrollView) popup_evaluateOrderView.findViewById(R.id.sv_bagDialog);
+            sv_bagDialog.startAnimation(AnimationUtils.loadAnimation(EvaluateOrder.this, R.anim.my_info_in));
+            popup_evaluateOrder.setFocusable(true);
+            popup_evaluateOrder.showAtLocation(view, Gravity.BOTTOM, 0, 0);
+            popup_evaluateOrderView.findViewById(R.id.bt_bagOrder_close).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    popup_evaluateOrder.dismiss();
+                }
+            });
+            popup_evaluateOrderView.findViewById(R.id.bt_pop_collection).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    int index = 0;
+                    Cursor cursor = db.rawQuery("select * from food_evaluate"
+                            , null);
+
+                    while (cursor.moveToNext()) {
+                        if (index == position) {
+                            setSaveData(cursor);
+                        }
+                        index ++;
+                    }
+                    popup_evaluateOrder.dismiss();
+                }
+            });
+        }
+
     }
 }

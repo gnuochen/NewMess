@@ -164,7 +164,7 @@ public class BabyPopWindow implements OnDismissListener, OnClickListener {
 	 * 使用SQLite来保存
 	 * */
 	private void setSaveData(){
-		SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(context.getFilesDir().toString()+"/newmessfoodbag.db3", null);
+		SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(context.getFilesDir().toString()+"/order_message_db.db3", null);
 		String sqlCreatTable = "create table food_info(name varchar(50),adress varchar(100)," +
 				"number varchar(10),price varchar(10),year varchar(50),month varchar(50)" +
 				",day varchar(50),hour varchar(50),minute varchar(50))";
