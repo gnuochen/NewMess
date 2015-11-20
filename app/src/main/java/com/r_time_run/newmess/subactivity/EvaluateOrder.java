@@ -60,7 +60,6 @@ public class EvaluateOrder extends Activity {
             public boolean onKey(View v, int keyCode, KeyEvent event) {
                 if (keyCode == KeyEvent.KEYCODE_BACK) {
                     if (popup_evaluateOrder != null) {
-                        System.out.println("dimiss");
                         popup_evaluateOrder.dismiss();
                     }
                 }
@@ -78,7 +77,7 @@ public class EvaluateOrder extends Activity {
         lv_evaluateOrder = (ListView)findViewById(R.id.lv_evaluateorder);
         //没有订单时显示
         lv_evaluateOrder.setEmptyView(findViewById(R.id.tv_empty_item));
-        db = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString() + "/newmessfoodbag.db3", null);
+        db = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString() + "/order_message_db.db3", null);
         popup_evaluateOrderView = this.getLayoutInflater().inflate(R.layout.popup_order_evaluate, null);
         //返回键
         bt_evaluateOrder_back.setOnClickListener(new View.OnClickListener() {
@@ -93,7 +92,7 @@ public class EvaluateOrder extends Activity {
      * 从服务器获取数据填写入该数组中
      */
     private void getDataFromServlet() {
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString() + "/newmessfoodbag.db3", null);
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString() + "/order_message_db.db3", null);
         try {
             Cursor cursor = db.rawQuery("select * from food_evaluate", null);
             listItems = new ArrayList<>();

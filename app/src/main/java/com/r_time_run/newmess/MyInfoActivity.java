@@ -364,7 +364,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
      */
     private void getDataFromServlet() {
 
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString() + "/newmessfoodbag.db3", null);
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString() + "/order_message_db.db3", null);
         int index = 0;
         try {
             Cursor cursor = db.rawQuery("select * from food_info", null);
@@ -405,7 +405,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
      * 使用SQLite来保存
      * */
     private void setSaveEvaluateData(Cursor cursor){
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString() + "/newmessfoodbag.db3", null);
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString() + "/order_message_db.db3", null);
         String sqlCreatTable = "create table food_evaluate(name varchar(50),adress varchar(100)," +
                 "number varchar(10),price varchar(10),year varchar(50),month varchar(50)" +
                 ",day varchar(50),hour varchar(50),minute varchar(50))";
@@ -439,7 +439,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
      * 使用SQLite来保存
     * */
     private void setSaveBuyedData(Cursor cursor){
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString() + "/newmessfoodbag.db3", null);
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(this.getFilesDir().toString() + "/order_message_db.db3", null);
         String sqlCreatTable = "create table food_buyed(name varchar(50),adress varchar(100)," +
                 "number varchar(10),price varchar(10),year varchar(50),month varchar(50)" +
                 ",day varchar(50),hour varchar(50),minute varchar(50))";
@@ -464,7 +464,5 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
 
     private void insertBuyedData(SQLiteDatabase db, String foodName, String foodLocation, String foodNum, String foodPrice,String year,String month,String day,String hour,String minute) {
         db.execSQL("insert into food_buyed values(?,?,?,?,?,?,?,?,?)", new String[]{foodName, foodLocation, foodNum, foodPrice, year + "", month + "", day + "", hour + "", minute + ""});
-        System.out.println("!!!!!插入成功");
-        System.out.println("!!!!!插入成功"+foodName+"  "+foodLocation);
     }
 }
