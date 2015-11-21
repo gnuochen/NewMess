@@ -26,9 +26,9 @@ import java.util.ArrayList;
 public class SubcategoryActivity extends BaseActivity {
     private ListView mListView1, mListView2;
 
-    SubcategoryAdapter secondAdapter;
+    SubcategoryAdapter secondAdapter;//又边的ListView的Adapter
 
-    SubcategoryAdapterFirst firstAdapter;
+    SubcategoryAdapterFirst firstAdapter;//左边的ListView的Adapter
 
     static int flag;
 
@@ -142,7 +142,8 @@ public class SubcategoryActivity extends BaseActivity {
     }
 
     /**
-     * 左边listview填充数据
+     *
+     * 左边ListView填充数据
      */
     private void listView1FillData() {
         firstAdapter = new SubcategoryAdapterFirst(this, textName);
@@ -151,6 +152,9 @@ public class SubcategoryActivity extends BaseActivity {
 
     }
 
+    /**
+     * 左边listview点击事件
+     */
     private void listview1onclick() {
         mListView1.setOnItemClickListener(new OnItemClickListener() {
             @Override
@@ -165,9 +169,10 @@ public class SubcategoryActivity extends BaseActivity {
             }
         });
     }
-
+    /**
+     * 右边listview填充
+     */
     public void listView2FillData(int listView1Position) {
-        // TODO Auto-generated method stub
         listBean.clear();
         Log.d("vivi", "mListView2.getCount()==" + mListView2.getCount());
         if (NetworkUtil.isNetwork(this) && state == true) {
@@ -250,6 +255,10 @@ public class SubcategoryActivity extends BaseActivity {
 
     }
 
+    /**
+     *
+     * 右边listview点击跳转
+     */
     private void mListView2IntentToOther(int flag2) {
         Log.d("mListView2IntentToOther", "position==" + flag2);
         mListView2.setOnItemClickListener(new OnItemClickListener() {
