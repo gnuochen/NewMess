@@ -120,9 +120,6 @@ public class SubcategoryActivity extends BaseActivity {
         secondAdapter.fillData(listBean);
         listView2FillData(0);
         mListView2.setAdapter(secondAdapter);
-//        secondAdapter = new SubcategoryAdapter(this, list);
-//        mListView2.setAdapter(secondAdapter);
-//        lvBeanPagerOneconcent = new ArrayList<SubcategoryBean>();
 
         TextView bt_subcategory_back = (TextView) findViewById(R.id.bt_subcategory_back);
         bt_subcategory_back.setOnClickListener(new View.OnClickListener() {
@@ -144,6 +141,9 @@ public class SubcategoryActivity extends BaseActivity {
 
     }
 
+    /**
+     * 左边listview填充数据
+     */
     private void listView1FillData() {
         firstAdapter = new SubcategoryAdapterFirst(this, textName);
         mListView1.setAdapter(firstAdapter);
