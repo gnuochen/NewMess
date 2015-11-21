@@ -150,8 +150,14 @@ public class BabyPopWindow implements OnDismissListener, OnClickListener {
 		case R.id.pop_ok:
 			listener.onClickOKPop();
 			this.foodNum = pop_num.getText().toString();
-			setSaveData();
-			Toast.makeText(context, "打包成功", Toast.LENGTH_SHORT).show();
+			int nowTime = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+			//超过19点就没法再下单
+			if (nowTime < 19){
+				setSaveData();
+				Toast.makeText(context, "打包成功", Toast.LENGTH_SHORT).show();
+			} else {
+				Toast.makeText(context, "请在规定时间内打包", Toast.LENGTH_SHORT).show();
+			}
 			dissmiss();
 			break;
 
