@@ -135,8 +135,6 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
         bt_login_text.setOnClickListener(this);
 
         //点击登陆进入等待登陆完成的界面
-        float leftViewWidth = v_left.getWidth();
-        System.out.println("!!!!"+leftViewWidth);
         leftAction = PropertyAction.newPropertyAction(v_left).
                 interpolator(new LinearInterpolator()).
                 translationX(-300).
@@ -308,6 +306,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
     public void handleMsg(Message msg) {
         Bundle data = msg.getData();
         String json = data.getString("json");
+        System.out.println("!!!!"+json);
         try {
             JSONObject obj = new JSONObject(json);
             if (msg.what == TAG_LOGIN) {
@@ -320,7 +319,6 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            System.out.println("——————————————" + loginType);
                             drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
                             if (loginType.equals("学生")) {
                                 //进入学生界面
