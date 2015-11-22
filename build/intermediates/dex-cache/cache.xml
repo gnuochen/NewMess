@@ -2,34 +2,6 @@
 <items version="2" >
 
     <item
-        jar="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/exploded-aar/RunTime/library_viewPagerIndicator/unspecified/jars/classes.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="a836219806e8a99a5645bfd739b4693ab88e5743">
-        <dex dex="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/pre-dexed/debug/classes-d2966419d86b13fffae435c0319036da4809a7a5.jar" />
-    </item>
-    <item
-        jar="/Users/zouxiaobang/Documents/RunTime/app/libs/android-sliding-menu.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="42c243486cf4bb80d1ef424ab4f31b0103688979">
-        <dex dex="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/pre-dexed/debug/android-sliding-menu-087c1cb37c13b71d9abbb5dbdc8fdcfde996c65e.jar" />
-    </item>
-    <item
-        jar="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex dex="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-b33c2bffa126fd4051a80321d20d9a2dbe9866ff.jar" />
-    </item>
-    <item
-        jar="/System/Library/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
-        jumboMode="false"
-        revision="22.0.1"
-        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex dex="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-16dc5159e22a5a994c6498e3754221b3688ab165.jar" />
-    </item>
-    <item
         jar="/Users/zouxiaobang/Documents/RunTime/app/libs/httpmime-4.0.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -44,6 +16,27 @@
         <dex dex="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/pre-dexed/debug/apache-mime4j-0.6-8f12a778ae34a8697a461302ec7fdc7321ea59bd.jar" />
     </item>
     <item
+        jar="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/exploded-aar/com.eftimoff/androidplayer/1.0.3/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f56911802af2797dfaa75f9c04f1aa83fd90475a">
+        <dex dex="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/pre-dexed/debug/classes-c9eac42851443ef7c029709116317adb46801269.jar" />
+    </item>
+    <item
+        jar="/System/Library/android-sdk-macosx/extras/android/m2repository/com/android/support/support-annotations/22.2.0/support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/pre-dexed/debug/support-annotations-22.2.0-16dc5159e22a5a994c6498e3754221b3688ab165.jar" />
+    </item>
+    <item
+        jar="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/libs/internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/pre-dexed/debug/internal_impl-22.2.0-b33c2bffa126fd4051a80321d20d9a2dbe9866ff.jar" />
+    </item>
+    <item
         jar="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.0/jars/classes.jar"
         jumboMode="false"
         revision="22.0.1"
@@ -56,6 +49,27 @@
         revision="22.0.1"
         sha1="337ae39757fbfca04af0123f8dea23301f3d7320">
         <dex dex="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/pre-dexed/debug/classes-35c067da01d1555761c9b891b44c00da74b21dd0.jar" />
+    </item>
+    <item
+        jar="/Users/zouxiaobang/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/pre-dexed/debug/library-2.4.0-2489ea7055505c736f6358bcfd51a27d3d578293.jar" />
+    </item>
+    <item
+        jar="/Users/zouxiaobang/Documents/RunTime/app/libs/android-sliding-menu.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="42c243486cf4bb80d1ef424ab4f31b0103688979">
+        <dex dex="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/pre-dexed/debug/android-sliding-menu-087c1cb37c13b71d9abbb5dbdc8fdcfde996c65e.jar" />
+    </item>
+    <item
+        jar="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/exploded-aar/RunTime/library_viewPagerIndicator/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="a836219806e8a99a5645bfd739b4693ab88e5743">
+        <dex dex="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/pre-dexed/debug/classes-d2966419d86b13fffae435c0319036da4809a7a5.jar" />
     </item>
     <item
         jar="/Users/zouxiaobang/Documents/RunTime/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.0/jars/classes.jar"

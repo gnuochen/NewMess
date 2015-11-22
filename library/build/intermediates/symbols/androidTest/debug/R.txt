@@ -50,6 +50,17 @@ int id scrollview 0x7f070001
 int id webview 0x7f070002
 int layout pull_to_refresh_header_horizontal 0x7f030000
 int layout pull_to_refresh_header_vertical 0x7f030001
+int string define_androidplayer 0x7f050006
+int string library_androidplayer_author 0x7f050007
+int string library_androidplayer_authorWebsite 0x7f050008
+int string library_androidplayer_classPath 0x7f050009
+int string library_androidplayer_isOpenSource 0x7f05000a
+int string library_androidplayer_libraryDescription 0x7f05000b
+int string library_androidplayer_libraryName 0x7f05000c
+int string library_androidplayer_libraryVersion 0x7f05000d
+int string library_androidplayer_libraryWebsite 0x7f05000e
+int string library_androidplayer_licenseId 0x7f05000f
+int string library_androidplayer_repositoryLink 0x7f050010
 int string pull_to_refresh_from_bottom_pull_label 0x7f050003
 int string pull_to_refresh_from_bottom_refreshing_label 0x7f050004
 int string pull_to_refresh_from_bottom_release_label 0x7f050005

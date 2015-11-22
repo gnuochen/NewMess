@@ -15,14 +15,18 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.eftimoff.androidplayer.Player;
+import com.eftimoff.androidplayer.actions.property.PropertyAction;
 import com.r_time_run.newmess.constant.Constant;
 import com.r_time_run.newmess.net.NMParameters;
 import com.r_time_run.newmess.subactivity.BackOrder;
@@ -47,7 +51,10 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
 
     private TextView bt_bagOrder, bt_bagAppraise, bt_backBag, bt_goodFood, bt_buyedFood,
             bt_personInfo, bt_changePassword, bt_backLogin, tv_user_type, bt_registe_new_user;
-    private Button bt_user_land;
+    private Button bt_user_land,bt_login_text;
+    private View v_left;
+    private ProgressBar pb_wait_login;
+    private LinearLayout ll_login_content,ll_wait_login;
     private SharedPreferences sp;       //下次打开时显示上次的账号和密码
     public static Boolean registeToFirst = false;
     public static Boolean isLogined = false;       //判断是否已经登录
@@ -61,6 +68,10 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
     private ImageView ib_myinfo_touxiang;
     private String loginType = "学生";
     private static Boolean isExit = false;
+
+    private PropertyAction leftAction;
+    private PropertyAction loginTextAction;
+    private PropertyAction progressAction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,6 +94,12 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
         ll_my_info_student.setVisibility(View.GONE);
         ll_my_info_shangjia = (LinearLayout) findViewById(R.id.ll_my_info_shangjia);
         ll_my_info_shangjia.setVisibility(View.GONE);
+        ll_wait_login = (LinearLayout) findViewById(R.id.ll_wait_login);
+        ll_wait_login.setVisibility(View.GONE);
+        bt_login_text = (Button) findViewById(R.id.bt_login_text);
+        v_left = findViewById(R.id.v_left);
+        pb_wait_login = (ProgressBar) findViewById(R.id.pb_wait_login);
+        ll_login_content = (LinearLayout) findViewById(R.id.ll_login_content);
         sp = getSharedPreferences("config", MODE_PRIVATE);
         bt_bagOrder = (TextView) findViewById(R.id.bt_bagOrder);
         bt_bagAppraise = (TextView) findViewById(R.id.bt_bagAppraise);
@@ -115,6 +132,26 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
         bt_backLogin.setOnClickListener(this);
         bt_registe_new_user.setOnClickListener(this);
         bt_user_land.setOnClickListener(this);
+        bt_login_text.setOnClickListener(this);
+
+        //点击登陆进入等待登陆完成的界面
+        float leftViewWidth = v_left.getWidth();
+        System.out.println("!!!!"+leftViewWidth);
+        leftAction = PropertyAction.newPropertyAction(v_left).
+                interpolator(new LinearInterpolator()).
+                translationX(-300).
+                duration(550).
+                build();
+        loginTextAction = PropertyAction.newPropertyAction(bt_login_text).
+                interpolator(new LinearInterpolator()).
+                duration(1050).
+                alpha(0.4f).
+                build();
+        progressAction = PropertyAction.newPropertyAction(pb_wait_login).
+                interpolator(new LinearInterpolator()).
+                alpha(0f).
+                duration(550).
+                build();
     }
 
     /**
@@ -135,18 +172,14 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
         isLogined = sp.getBoolean("islogined", false);
         if (isLogined) {
             //若是已经登录过的，则直接在主界面而不再出现登录界面
-            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);
-            if (loginType.equals("学生")) {
-                ll_my_info_student.setVisibility(View.VISIBLE);
-                ll_my_info.invalidate();
-                tv_user_type.setText("student");
-            } else if (loginType.equals("商家")) {
-                ll_my_info_shangjia.setVisibility(View.VISIBLE);
-                ll_my_info.invalidate();
-                tv_user_type.setText("shopman");
-            }
+            drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN);
+            ll_login_content.setVisibility(View.GONE);
+            ll_wait_login.setVisibility(View.VISIBLE);
+            judge();
         } else {
             drawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_OPEN);
+            ll_login_content.setVisibility(View.VISIBLE);
+            ll_wait_login.setVisibility(View.GONE);
         }
     }
 
@@ -167,6 +200,17 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
      * 对账户密码进行判断后是否进入我的信息页面
      */
     public void judge() {
+        //点击登陆后进入等待登陆界面
+        ll_wait_login.setVisibility(View.VISIBLE);
+        ll_login_content.setVisibility(View.GONE);
+        Player.init().
+                animate(leftAction).
+                then().
+                animate(loginTextAction).
+                then().
+                animate(progressAction).
+                play();
+        //请求服务器进行登陆
         NMParameters loginParames = new NMParameters();
         loginParames.add("action", "login");
         loginParames.add("name", et_user_name.getText().toString());
@@ -214,6 +258,10 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
                 break;
             case R.id.bt_user_login:        //登录按钮
                 judge();
+                break;
+            case R.id.bt_login_text:
+                ll_wait_login.setVisibility(View.GONE);
+                ll_login_content.setVisibility(View.VISIBLE);
                 break;
         }
     }
@@ -265,6 +313,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
             if (msg.what == TAG_LOGIN) {
                 isLoginState = obj.getBoolean("state");
                 if (isLoginState) {
+                    ll_login_content.setVisibility(View.VISIBLE);
                     isLogined = true;       //登录成功
                     remeryUserPassword();               //是否记住密码
                     Handler handler = new Handler();

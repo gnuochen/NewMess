@@ -164,6 +164,17 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int pull_to_refresh_header_vertical=0x7f030001;
     }
     public static final class string {
+        public static final int define_androidplayer=0x7f050006;
+        public static final int library_androidplayer_author=0x7f050007;
+        public static final int library_androidplayer_authorWebsite=0x7f050008;
+        public static final int library_androidplayer_classPath=0x7f050009;
+        public static final int library_androidplayer_isOpenSource=0x7f05000a;
+        public static final int library_androidplayer_libraryDescription=0x7f05000b;
+        public static final int library_androidplayer_libraryName=0x7f05000c;
+        public static final int library_androidplayer_libraryVersion=0x7f05000d;
+        public static final int library_androidplayer_libraryWebsite=0x7f05000e;
+        public static final int library_androidplayer_licenseId=0x7f05000f;
+        public static final int library_androidplayer_repositoryLink=0x7f050010;
         public static final int pull_to_refresh_from_bottom_pull_label=0x7f050003;
         public static final int pull_to_refresh_from_bottom_refreshing_label=0x7f050004;
         public static final int pull_to_refresh_from_bottom_release_label=0x7f050005;

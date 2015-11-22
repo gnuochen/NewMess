@@ -11,6 +11,21 @@
     <item name="gridview" type="id"/>
     <item name="scrollview" type="id"/>
     <item name="webview" type="id"/>
+    <!-- From: file:/Users/zouxiaobang/Documents/RunTime/library/build/intermediates/exploded-aar/com.eftimoff/androidplayer/1.0.3/res/values/values.xml -->
+    <eat-comment/>
+    <string name="define_androidplayer">year;owner</string>
+    <string name="library_androidplayer_author">Georgi Eftimov</string>
+    <string name="library_androidplayer_authorWebsite">http://eftimoff.com</string>
+    <string name="library_androidplayer_classPath">com.eftimoff.androidplayer</string>
+    <string name="library_androidplayer_isOpenSource">true</string>
+    <string name="library_androidplayer_libraryDescription">https://github.com/geftimov/android-player</string>
+    <string name="library_androidplayer_libraryName">AndroidPlayer</string>
+    <string name="library_androidplayer_libraryVersion">1.0.1</string>
+    <string name="library_androidplayer_libraryWebsite">https://github.com/geftimov/android-player</string>
+    <string name="library_androidplayer_licenseId">apache_2_0</string>
+    <string name="library_androidplayer_repositoryLink">https://github.com/geftimov/android-player</string>
+    <!-- From: file:/Users/zouxiaobang/Documents/RunTime/library/build/intermediates/bundles/debug/res/values/values.xml -->
+    <eat-comment/>
     <string name="pull_to_refresh_from_bottom_pull_label">@string/pull_to_refresh_pull_label</string>
     <string name="pull_to_refresh_from_bottom_refreshing_label">@string/pull_to_refresh_refreshing_label</string>
     <string name="pull_to_refresh_from_bottom_release_label">@string/pull_to_refresh_release_label</string>
