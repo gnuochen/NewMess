@@ -17,11 +17,9 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +36,8 @@ import com.r_time_run.newmess.subactivity.MyAllInfo;
 import com.r_time_run.newmess.subactivity.MyBuyed;
 import com.r_time_run.newmess.subactivity.MyCollection;
 import com.r_time_run.newmess.subactivity.RegisteActivity;
+import com.rey.material.widget.CheckBox;
+import com.rey.material.widget.ProgressView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,7 +53,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
             bt_personInfo, bt_changePassword, bt_backLogin, tv_user_type, bt_registe_new_user;
     private Button bt_user_land,bt_login_text;
     private View v_left;
-    private ProgressBar pb_wait_login;
+    private ProgressView pb_wait_login;
     private LinearLayout ll_login_content,ll_wait_login;
     private SharedPreferences sp;       //下次打开时显示上次的账号和密码
     public static Boolean registeToFirst = false;
@@ -98,7 +98,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
         ll_wait_login.setVisibility(View.GONE);
         bt_login_text = (Button) findViewById(R.id.bt_login_text);
         v_left = findViewById(R.id.v_left);
-        pb_wait_login = (ProgressBar) findViewById(R.id.pb_wait_login);
+        pb_wait_login = (ProgressView) findViewById(R.id.pb_wait_login);
         ll_login_content = (LinearLayout) findViewById(R.id.ll_login_content);
         sp = getSharedPreferences("config", MODE_PRIVATE);
         bt_bagOrder = (TextView) findViewById(R.id.bt_bagOrder);
@@ -150,6 +150,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
                 alpha(0f).
                 duration(550).
                 build();
+
     }
 
     /**
