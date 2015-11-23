@@ -5,5 +5,5 @@ package com.r_time_run.newmess.constant;
  */
 public class Constant {
     public static final String url = "http://115.29.55.71:8080/NewMessServlet/";
-    public final static String URL_FOODS = url+"servlet/ClientSide";
+    public final static String URL_FOODS = url+"servlet/NMServlet";
 }

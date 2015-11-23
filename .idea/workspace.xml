@@ -16,73 +16,12 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1c92119b-260d-454f-af18-8c5f6da1babe" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/cardview_v7_23_1_1.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/material_1_2_1.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/build/intermediates/manifests/tmp/manifestMerger1047074067766513222.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/build/intermediates/manifests/tmp/manifestMerger4871069670273137216.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/build/intermediates/manifests/tmp/manifestMerger7034638117901728370.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library/build/intermediates/manifests/tmp/manifestMerger7861694771659033607.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/manifests/tmp/manifestMerger3502306556093197939.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/manifests/tmp/manifestMerger3806231621250095971.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/manifests/tmp/manifestMerger8104833398967386095.xml" afterPath="" />
+    <list default="true" id="1c92119b-260d-454f-af18-8c5f6da1babe" name="Default" comment="11.23  11:00修改">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/aidl/androidTest/debug/dependency.store" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/aidl/androidTest/debug/dependency.store" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/aidl/debug/dependency.store" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/aidl/debug/dependency.store" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/aidl/release/dependency.store" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/aidl/release/dependency.store" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/aidl/androidTest/debug/dependency.store" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/aidl/androidTest/debug/dependency.store" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/aidl/debug/dependency.store" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/aidl/debug/dependency.store" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/aidl/release/dependency.store" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/aidl/release/dependency.store" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" afterPath="$PROJECT_DIR$/build/intermediates/gradle_project_sync_data.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/outputs/aar/library-debug.aar" afterPath="$PROJECT_DIR$/library/build/outputs/aar/library-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/outputs/aar/library-release.aar" afterPath="$PROJECT_DIR$/library/build/outputs/aar/library-release.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/outputs/aar/library_viewPagerIndicator-debug.aar" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/outputs/aar/library_viewPagerIndicator-debug.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/outputs/aar/library_viewPagerIndicator-release.aar" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/outputs/aar/library_viewPagerIndicator-release.aar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/library/build/intermediates/resources/resources-debug-androidTest.ap_" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/resources/resources-debug-androidTest.ap_" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/resources/resources-debug-androidTest.ap_" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/utils/ACache.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/utils/ACache.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/release/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/release/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/release/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/bundles/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/bundles/debug/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/bundles/debug/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/bundles/release/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/bundles/release/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/bundles/release/aapt/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/bundles/release/aapt/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/manifests/androidTest/debug/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/constant/Constant.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/constant/Constant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/MyInfoActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/MyInfoActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/R.txt" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/debug/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/bundles/release/R.txt" afterPath="$PROJECT_DIR$/library/build/intermediates/bundles/release/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/symbols/androidTest/debug/R.txt" afterPath="$PROJECT_DIR$/library/build/intermediates/symbols/androidTest/debug/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/bundles/debug/R.txt" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/bundles/debug/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/bundles/release/R.txt" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/bundles/release/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/symbols/androidTest/debug/R.txt" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/symbols/androidTest/debug/R.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_my_info.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_my_info.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeAssets/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeAssets/release/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeAssets/release/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeResources/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/mergeResources/androidTest/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/packageResources/debug/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/packageResources/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/build/intermediates/incremental/packageResources/release/merger.xml" afterPath="$PROJECT_DIR$/library/build/intermediates/incremental/packageResources/release/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/mergeAssets/androidTest/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/mergeAssets/debug/merger.xml" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/mergeAssets/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/mergeAssets/release/merger.xml" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/mergeAssets/release/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/mergeResources/androidTest/debug/merger.xml" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/mergeResources/androidTest/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/mergeResources/debug/merger.xml" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/mergeResources/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/mergeResources/release/merger.xml" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/mergeResources/release/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/packageResources/debug/merger.xml" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/packageResources/debug/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/packageResources/release/merger.xml" afterPath="$PROJECT_DIR$/library_viewPagerIndicator/build/intermediates/incremental/packageResources/release/merger.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="RunTime.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -127,11 +66,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="activity_my_info.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Constant.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/constant/Constant.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.31118315">
+              <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_my_info.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_my_info.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29411766">
-              <caret line="732" column="64" selection-start-line="732" selection-start-column="64" selection-end-line="732" selection-end-column="64" />
+            <state vertical-scroll-proportion="-14.75862">
+              <caret line="739" column="60" selection-start-line="739" selection-start-column="60" selection-end-line="739" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -2832,12 +2781,12 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/library/build.gradle" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/constant/Constant.java" />
         <option value="$PROJECT_DIR$/library/src/main/java/com/handmark/pulltorefresh/library/PullToRefreshHorizontalScrollView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/utils/ACache.java" />
         <option value="$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.rey5137/material/1.2.1/res/values/values.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_my_info.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/MyInfoActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/constant/Constant.java" />
       </list>
     </option>
   </component>
@@ -2991,6 +2940,70 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="values-v11" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RunTime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RunTime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newmess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RunTime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RunTime" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="newmess" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constant" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -3373,7 +3386,13 @@
       <option name="project" value="LOCAL" />
       <updated>1448161226353</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="11.23  11:00修改">
+      <created>1448247292800</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1448247292800</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3382,7 +3401,7 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17139678" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17139678" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -3393,7 +3412,7 @@
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31455898" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31455898" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3429,7 +3448,8 @@
     <MESSAGE value="11.20  10:45修改" />
     <MESSAGE value="11.21  15:15修改" />
     <MESSAGE value="11.22  11:00修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="11.22  11:00修改" />
+    <MESSAGE value="11.23  11:00修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="11.23  11:00修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -3720,14 +3740,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/constant/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="60" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/subactivity/ChangePass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
@@ -3870,13 +3882,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_my_info.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29411766">
-          <caret line="732" column="64" selection-start-line="732" selection-start-column="64" selection-end-line="732" selection-end-column="64" />
+        <state vertical-scroll-proportion="-14.75862">
+          <caret line="739" column="60" selection-start-line="739" selection-start-column="60" selection-end-line="739" selection-end-column="60" />
           <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/r_time_run/newmess/constant/Constant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31118315">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
