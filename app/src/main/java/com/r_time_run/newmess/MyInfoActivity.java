@@ -25,6 +25,7 @@ import android.widget.Toast;
 
 import com.eftimoff.androidplayer.Player;
 import com.eftimoff.androidplayer.actions.property.PropertyAction;
+import com.gc.materialdesign.views.ProgressBarCircularIndeterminate;
 import com.r_time_run.newmess.constant.Constant;
 import com.r_time_run.newmess.net.NMParameters;
 import com.r_time_run.newmess.subactivity.BackOrder;
@@ -37,7 +38,6 @@ import com.r_time_run.newmess.subactivity.MyBuyed;
 import com.r_time_run.newmess.subactivity.MyCollection;
 import com.r_time_run.newmess.subactivity.RegisteActivity;
 import com.rey.material.widget.CheckBox;
-import com.rey.material.widget.ProgressView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -53,7 +53,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
             bt_personInfo, bt_changePassword, bt_backLogin, tv_user_type, bt_registe_new_user;
     private Button bt_user_land,bt_login_text;
     private View v_left;
-    private ProgressView pb_wait_login;
+    private ProgressBarCircularIndeterminate pb_wait_login;
     private LinearLayout ll_login_content,ll_wait_login;
     private SharedPreferences sp;       //下次打开时显示上次的账号和密码
     public static Boolean registeToFirst = false;
@@ -98,7 +98,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
         ll_wait_login.setVisibility(View.GONE);
         bt_login_text = (Button) findViewById(R.id.bt_login_text);
         v_left = findViewById(R.id.v_left);
-        pb_wait_login = (ProgressView) findViewById(R.id.pb_wait_login);
+        pb_wait_login = (ProgressBarCircularIndeterminate) findViewById(R.id.pb_wait_login);
         ll_login_content = (LinearLayout) findViewById(R.id.ll_login_content);
         sp = getSharedPreferences("config", MODE_PRIVATE);
         bt_bagOrder = (TextView) findViewById(R.id.bt_bagOrder);
@@ -133,24 +133,6 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
         bt_registe_new_user.setOnClickListener(this);
         bt_user_land.setOnClickListener(this);
         bt_login_text.setOnClickListener(this);
-
-        //点击登陆进入等待登陆完成的界面
-        leftAction = PropertyAction.newPropertyAction(v_left).
-                interpolator(new LinearInterpolator()).
-                translationX(-300).
-                duration(550).
-                build();
-        loginTextAction = PropertyAction.newPropertyAction(bt_login_text).
-                interpolator(new LinearInterpolator()).
-                duration(1050).
-                alpha(0.4f).
-                build();
-        progressAction = PropertyAction.newPropertyAction(pb_wait_login).
-                interpolator(new LinearInterpolator()).
-                alpha(0f).
-                duration(550).
-                build();
-
     }
 
     /**
@@ -202,6 +184,22 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
         //点击登陆后进入等待登陆界面
         ll_wait_login.setVisibility(View.VISIBLE);
         ll_login_content.setVisibility(View.GONE);
+        //点击登陆进入等待登陆完成的界面
+        leftAction = PropertyAction.newPropertyAction(v_left).
+                interpolator(new LinearInterpolator()).
+                translationX(-300).
+                duration(550).
+                build();
+        loginTextAction = PropertyAction.newPropertyAction(bt_login_text).
+                interpolator(new LinearInterpolator()).
+                duration(1050).
+                alpha(0.4f).
+                build();
+        progressAction = PropertyAction.newPropertyAction(pb_wait_login).
+                interpolator(new LinearInterpolator()).
+                alpha(0f).
+                duration(550).
+                build();
         Player.init().
                 animate(leftAction).
                 then().
@@ -258,7 +256,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
             case R.id.bt_user_login:        //登录按钮
                 judge();
                 break;
-            case R.id.bt_login_text:
+            case R.id.bt_login_text:        //停止登录
                 ll_wait_login.setVisibility(View.GONE);
                 ll_login_content.setVisibility(View.VISIBLE);
                 break;
