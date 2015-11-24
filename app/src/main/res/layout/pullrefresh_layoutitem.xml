@@ -11,20 +11,28 @@
         android:orientation="vertical">
 
         <!-- 头部 viewPager3D翻转 -->
-        <include
-            layout="@layout/main_search"/>
-        <include
-            android:id="@+id/viewPager_itemone_listView_viewPager_itemheader"
-            layout="@layout/homeactivity_viewpageritem_itemone_header"
-            android:layout_marginTop="2dp"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent" />
+        <include layout="@layout/main_search" />
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/viewPager_itemone_listView_viewPager_itemheader"
+                layout="@layout/homeactivity_viewpageritem_itemone_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp" />
 
 
-        <include
-            android:id="@+id/viewpager_itmone_guideandeclock"
-            layout="@layout/homeactivity_viewpageritem_itemone_guideandclck"
-            />
+            <include
+                android:layout_marginTop="180dp"
+                android:id="@+id/viewpager_itmone_guideandeclock"
+                layout="@layout/homeactivity_viewpageritem_itemone_guideandclck"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
 
     </LinearLayout>
 

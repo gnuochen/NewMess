@@ -1,32 +1,23 @@
 package com.r_time_run.newmess.utils;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.GestureDetector;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AbsListView;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.Gallery;
 import android.widget.ImageSwitcher;
 import android.widget.ImageView;
-import android.widget.PopupWindow;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 import android.widget.ViewSwitcher;
-
-import com.r_time_run.newmess.GoodsActivity;
 import com.r_time_run.newmess.R;
 import com.r_time_run.newmess.constant.ConstantHome;
 import com.r_time_run.newmess.listener.MyGestureListener;
 import com.r_time_run.newmess.subactivity.SquareActivity;
 import com.r_time_run.newmess.view.ElasticScrollView;
-
 import java.util.ArrayList;
 
 /**
@@ -40,7 +31,6 @@ public class ViewPagerHomeUtil {
     private int tag;
     private ImageSwitcher imswitcher;
     private ViewPager mViewPager;
-    private PopupWindow popupWindow;
     public ViewPagerHomeUtil(Context context,ArrayList<View> views, Handler mHandler,ViewPager mViewPager,int tag) {
         this.context=context;
         this.views=views;
@@ -52,10 +42,10 @@ public class ViewPagerHomeUtil {
         li=LayoutInflater.from(context);
     }
 //    final ArrayList<ArrayList<GoodsBean>> list
-/**
- *        初始化homeviewpager
- *
- * */
+    /**
+     *        初始化homeviewpager
+     *
+     * */
     @SuppressWarnings("unchecked")
     public ElasticScrollView initeViewTwoContrls() {
         View viewTwo = views.get(1);
@@ -64,18 +54,27 @@ public class ViewPagerHomeUtil {
         /**
          * 设置主页的点击事件
          * */
-        ImageView first_goodshop = (ImageView) scrollView.findViewById(R.id.first_goodshop);
-        ImageView first_praiseselect = (ImageView) scrollView.findViewById(R.id.first_praiseselect);
-        ImageView first_friends = (ImageView) scrollView.findViewById(R.id.first_friends);
+        LinearLayout first_goodshop = (LinearLayout) scrollView.findViewById(R.id.first_goodshop);
+        LinearLayout first_praiseselect = (LinearLayout) scrollView.findViewById(R.id.first_praiseselect);
+        LinearLayout first_friends = (LinearLayout) scrollView.findViewById(R.id.first_friends);
+        LinearLayout first_news = (LinearLayout) scrollView.findViewById(R.id.first_news);
+        first_news.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
         first_goodshop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 mViewPager.setCurrentItem(2);
             }
         });
         first_praiseselect.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 mViewPager.setCurrentItem(0);
             }
         });
@@ -89,14 +88,6 @@ public class ViewPagerHomeUtil {
         // 重写的ScrollView只能通过手动添加显示view布局
         elasticScrollView.addChild(scrollView, 1);
 //        设置头部进入食堂
-        TextView textView = (TextView) viewTwo.findViewById(R.id.tv_goto_foodsquare);
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context,GoodsActivity.class);
-                context.startActivity(intent);
-            }
-        });
 
         /** 头布局的3D效果 */
         int count = 0;

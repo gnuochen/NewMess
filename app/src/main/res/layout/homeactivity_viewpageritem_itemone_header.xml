@@ -6,7 +6,7 @@
     <ImageSwitcher
         android:id="@+id/imageSwitcher1"
         android:layout_width="fill_parent"
-        android:layout_height="200dp"
+        android:layout_height="300dp"
         android:background="#ebeaea" >
     </ImageSwitcher>
 
@@ -17,7 +17,7 @@
             android:id="@+id/view1"
             android:layout_width="60dp"
             android:layout_height="3dp"
-            android:background="#b50202"
+            android:background="#ff990a"
             android:layout_weight="25"
             />
         <View

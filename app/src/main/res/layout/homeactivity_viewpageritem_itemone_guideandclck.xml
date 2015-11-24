@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
+    android:layout_height="match_parent"
+    android:background="#88ffffff">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="30dp"
-        android:padding="10dp"
-        android:textColor="#40000000"
-        android:text="新菜式宣传语" />
-
+        android:layout_height="55dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="20dp"
+            android:textSize="14sp"
+            android:lines="1"
+            android:text="日本风味鮘鱼烧（豆沙，栗蓉，炼乳三口味）"/>
+    </LinearLayout>
     <LinearLayout
         android:padding="6dp"
         android:layout_width="match_parent"
@@ -25,6 +29,8 @@
             >
 
             <LinearLayout
+                android:id="@+id/first_praiseselect"
+                android:clickable="true"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="120dp"
@@ -33,9 +39,8 @@
                 android:background="#ff8e70">
 
                 <ImageView
-                    android:id="@+id/first_praiseselect"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:src="@drawable/first_praiseselect" />
 
                 <TextView
@@ -48,6 +53,8 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/first_friends"
+                android:clickable="true"
                 android:layout_marginTop="6dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -58,15 +65,15 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/first_dail" />
+                    android:layout_height="50dp"
+                    android:src="@drawable/first_friends" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:textColor="#fff"
-                    android:text="快餐实况" />
+                    android:text="互动圈" />
             </LinearLayout>
 
         </LinearLayout>
@@ -80,6 +87,8 @@
             android:layout_margin="2dp">
 
             <LinearLayout
+                android:id="@+id/first_goodshop"
+                android:clickable="true"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:gravity="center"
@@ -88,10 +97,8 @@
                 android:background="#ff8e70">
 
                 <ImageView
-                    android:id="@+id/first_goodshop"
                     android:layout_width="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_height="0dp"
+                    android:layout_height="50dp"
                     android:src="@drawable/first_goodshop" />
                 <TextView
                     android:layout_below="@id/first_goodshop"
@@ -106,6 +113,8 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/first_news"
+                android:clickable="true"
                 android:layout_marginTop="6dp"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -115,9 +124,8 @@
                 android:background="#ffd47d">
 
                 <ImageView
-                    android:id="@+id/first_news"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:src="@drawable/first_news" />
                 <TextView
                     android:layout_below="@id/first_news"
@@ -134,7 +142,8 @@
         </LinearLayout>
 
         <LinearLayout
-
+            android:id="@+id/tv_goto_foodsquare"
+            android:clickable="true"
             android:layout_margin="3dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -144,26 +153,26 @@
             android:background="#ff8594">
 
             <ImageView
-                android:id="@+id/first_friends"
+
                 android:layout_gravity="center_horizontal"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/first_friends" />
+                android:layout_height="50dp"
+                android:src="@drawable/first_dail" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:textColor="#fff"
-                android:text="互动圈"
+                android:text="进入食堂"
                 android:layout_alignLeft="@id/first_goodshop"
                 android:layout_alignParentRight="@id/first_goodshop"/>
 
         </LinearLayout>
     </LinearLayout>
-
     <LinearLayout
-        android:padding="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
@@ -178,7 +187,7 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:src="@drawable/first_yuefan" />
             <TextView
                 android:layout_width="wrap_content"
@@ -200,7 +209,7 @@
 
             <ImageView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:src="@drawable/first_justjob" />
             <TextView
                 android:layout_width="wrap_content"
