@@ -13,11 +13,14 @@ import android.widget.ImageSwitcher;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ViewSwitcher;
+
+import com.r_time_run.newmess.GoodsActivity;
 import com.r_time_run.newmess.R;
 import com.r_time_run.newmess.constant.ConstantHome;
 import com.r_time_run.newmess.listener.MyGestureListener;
 import com.r_time_run.newmess.subactivity.SquareActivity;
 import com.r_time_run.newmess.view.ElasticScrollView;
+
 import java.util.ArrayList;
 
 /**
@@ -58,12 +61,7 @@ public class ViewPagerHomeUtil {
         LinearLayout first_praiseselect = (LinearLayout) scrollView.findViewById(R.id.first_praiseselect);
         LinearLayout first_friends = (LinearLayout) scrollView.findViewById(R.id.first_friends);
         LinearLayout first_news = (LinearLayout) scrollView.findViewById(R.id.first_news);
-        first_news.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+        LinearLayout tv_goto_foodsquare = (LinearLayout) scrollView.findViewById(R.id.tv_goto_foodsquare);
         first_goodshop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -85,9 +83,17 @@ public class ViewPagerHomeUtil {
                 context.startActivity(intent);
             }
         });
+        tv_goto_foodsquare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, GoodsActivity.class);
+                context.startActivity(intent);
+            }
+        });
         // 重写的ScrollView只能通过手动添加显示view布局
         elasticScrollView.addChild(scrollView, 1);
 //        设置头部进入食堂
+
 
         /** 头布局的3D效果 */
         int count = 0;
@@ -128,7 +134,6 @@ public class ViewPagerHomeUtil {
         AutoChangePicture autoPic = new AutoChangePicture(imswitcher,
                 ConstantHome.imageIds, vs, count);
         autoPic.execute(100);
-
         return elasticScrollView;
     }
 }

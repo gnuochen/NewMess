@@ -57,14 +57,14 @@ public class FirstActivity extends TabActivity {
             public void onClick(View v) {
                 tabHost.setCurrentTabByTag("news");
                 setGuidShow();
-                tv_news.setImageResource(R.drawable.first_user);
+                tv_news.setImageResource(R.drawable.first_user_on);
             }
         });
     }
 
     public void setGuidShow() {
         tv_thing.setImageResource(R.drawable.first_home_on);
-        tv_news.setImageResource(R.drawable.first_user_on);
+        tv_news.setImageResource(R.drawable.first_user);
     }
 
     public void initTab() {

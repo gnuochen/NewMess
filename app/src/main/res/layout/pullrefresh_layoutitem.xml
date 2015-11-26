@@ -26,12 +26,11 @@
 
 
             <include
-                android:layout_marginTop="180dp"
                 android:id="@+id/viewpager_itmone_guideandeclock"
                 layout="@layout/homeactivity_viewpageritem_itemone_guideandclck"
-
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="180dp" />
         </FrameLayout>
 
     </LinearLayout>
