@@ -27,7 +27,7 @@ public class GoodsActivity extends AppCompatActivity {
 
     private int[] imageIds=new int[]
             {
-                    R.drawable.tangshui, R.drawable.tangshui, R.drawable.tangshui, R.drawable.tangshui
+                    R.drawable.fantang1, R.drawable.fantang2, R.drawable.fantang3, R.drawable.fantang4
             };
     private String[] names=new String[]{"第一食堂","第二食堂","第三食堂","第四食堂"};
 
@@ -104,10 +104,10 @@ public class GoodsActivity extends AppCompatActivity {
                 view = convertView;
             }
             ImageView imHeader = (ImageView) view.findViewById(R.id.header);
-            TextView tvName= (TextView) view.findViewById(R.id.tv_name);
+//            TextView tvName= (TextView) view.findViewById(R.id.tv_name);
 
             imHeader.setImageResource((Integer) listItems.get(position).get("image"));
-            tvName.setText("食堂名称: " + listItems.get(position).get("cantingName"));
+//            tvName.setText("食堂名称: " + listItems.get(position).get("cantingName"));
 
             return view;
         }
