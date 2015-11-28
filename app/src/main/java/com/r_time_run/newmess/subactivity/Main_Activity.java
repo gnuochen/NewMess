@@ -101,7 +101,6 @@ public class Main_Activity extends BaseActivity {
 //        对第二个页面进行填充
         initeViewPangetTwo();
 
-
     }
 
     private void initeLayout() {

@@ -2,85 +2,102 @@
 <items version="2" >
 
     <item
-        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\RunTime\library_viewPagerIndicator\unspecified\jars\classes.jar"
-        jumboMode="false" revision="22.0.1" sha1="69bb247944461afb0562016579812e41484b1e89">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\classes-f6d683a8c90394a9c3b541fa54673eab85ec741c.jar" />
-    </item>
-    <item
-        jar="C:\Users\nuochen\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
-        jumboMode="false" revision="22.0.1" sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\library-2.4.0-2838af921498f6c87aa92bb0ccd309a8a4fce55f.jar" />
-    </item>
-    <item
-        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
-        jumboMode="false" revision="22.0.1" sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\classes-ccf740df89ce718b65362a077d2c644a09a4a04b.jar" />
-    </item>
-    <item
-        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\RunTime\library\unspecified\jars\classes.jar"
-        jumboMode="false" revision="22.0.1" sha1="827cbbcef3f0981764f25c129918b4ddce4d29d1">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\classes-25e56c06bf39ae14f6d5d1db34ebb0978cb20455.jar" />
-    </item>
-    <item
-        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\com.github.navasmdc\MaterialDesign\1.5\jars\classes.jar"
-        jumboMode="false" revision="22.0.1" sha1="12b228574de7977e56e41cbfb385b1463bbdb41a">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\classes-4a1af5a8263bffe501a1325fdb7beb7d4af530ff.jar" />
-    </item>
-    <item jar="E:\GitAndroid_projects\RunTime\app\libs\android-sliding-menu.jar" jumboMode="false"
-        revision="22.0.1" sha1="42c243486cf4bb80d1ef424ab4f31b0103688979">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\android-sliding-menu-5c2ade39009d4a3cf6e964f5570a45324d99d2a7.jar" />
-    </item>
-    <item
-        jar="E:\Sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
-        jumboMode="false" revision="22.0.1" sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\support-annotations-22.2.0-fe8ea765e7c6238e26597a51f0dbac4b9546a50c.jar" />
+        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\classes-56184e494658e300be766c4dbf8c0c9ec70ab831.jar" />
     </item>
     <item
         jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\com.eftimoff\androidplayer\1.0.3\jars\classes.jar"
-        jumboMode="false" revision="22.0.1" sha1="f56911802af2797dfaa75f9c04f1aa83fd90475a">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\classes-15cc5306b02bb39f43bb44d0de80947ddd37df35.jar" />
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f56911802af2797dfaa75f9c04f1aa83fd90475a">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\classes-15cc5306b02bb39f43bb44d0de80947ddd37df35.jar" />
     </item>
     <item
-        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.1.1\jars\classes.jar"
-        jumboMode="false" revision="22.0.1" sha1="5e412e954a24c5310a459c09870e4e2081aceb03">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\classes-56184e494658e300be766c4dbf8c0c9ec70ab831.jar" />
-    </item>
-    <item jar="E:\GitAndroid_projects\RunTime\app\libs\apache-mime4j-0.6.jar" jumboMode="false"
-        revision="22.0.1" sha1="12e7270b1819bae792c9a9e5e8076ebbcdaaac4b">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\apache-mime4j-0.6-666659a73ae137c09bd053fd8655b50f57bffc7e.jar" />
+        jar="E:\GitAndroid_projects\RunTime\app\libs\android-sliding-menu.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="42c243486cf4bb80d1ef424ab4f31b0103688979">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\android-sliding-menu-5c2ade39009d4a3cf6e964f5570a45324d99d2a7.jar" />
     </item>
     <item
-        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
-        jumboMode="false" revision="22.0.1" sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\classes-a6844c5aaa150f55e679ddaa6dcf3fe481492489.jar" />
-    </item>
-    <item jar="E:\GitAndroid_projects\RunTime\app\libs\httpmime-4.0.jar" jumboMode="false"
-        revision="22.0.1" sha1="e0340636480aea12d38b0fb6a6ed1f06c5c79c5a">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\httpmime-4.0-d3be42cd73c6cf2271905760a1bd6414280883ac.jar" />
-    </item>
-    <item
-        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
-        jumboMode="false" revision="22.0.1" sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\internal_impl-22.2.0-d2de5c1f73a07a6a4083c485bb8f944b49781cef.jar" />
+        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\RunTime\library\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="827cbbcef3f0981764f25c129918b4ddce4d29d1">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\classes-25e56c06bf39ae14f6d5d1db34ebb0978cb20455.jar" />
     </item>
     <item
         jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\com.github.rey5137\material\1.2.1\jars\classes.jar"
-        jumboMode="false" revision="22.0.1" sha1="0040be6592cbfbb19a2c1e90a759278795ed2280">
-        <dex
-            dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\debug\classes-5b4d8870945307f750a30d977a514fa695cd42fa.jar" />
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0040be6592cbfbb19a2c1e90a759278795ed2280">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\classes-5b4d8870945307f750a30d977a514fa695cd42fa.jar" />
+    </item>
+    <item
+        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\classes-a6844c5aaa150f55e679ddaa6dcf3fe481492489.jar" />
+    </item>
+    <item
+        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\internal_impl-22.2.0-d2de5c1f73a07a6a4083c485bb8f944b49781cef.jar" />
+    </item>
+    <item
+        jar="E:\GitAndroid_projects\RunTime\app\libs\apache-mime4j-0.6.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="12e7270b1819bae792c9a9e5e8076ebbcdaaac4b">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\apache-mime4j-0.6-666659a73ae137c09bd053fd8655b50f57bffc7e.jar" />
+    </item>
+    <item
+        jar="C:\Users\nuochen\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\library-2.4.0-2838af921498f6c87aa92bb0ccd309a8a4fce55f.jar" />
+    </item>
+    <item
+        jar="E:\GitAndroid_projects\RunTime\app\libs\httpmime-4.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e0340636480aea12d38b0fb6a6ed1f06c5c79c5a">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\httpmime-4.0-d3be42cd73c6cf2271905760a1bd6414280883ac.jar" />
+    </item>
+    <item
+        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\RunTime\library_viewPagerIndicator\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="69bb247944461afb0562016579812e41484b1e89">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\classes-f6d683a8c90394a9c3b541fa54673eab85ec741c.jar" />
+    </item>
+    <item
+        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\classes-ccf740df89ce718b65362a077d2c644a09a4a04b.jar" />
+    </item>
+    <item
+        jar="E:\GitAndroid_projects\RunTime\app\build\intermediates\exploded-aar\com.github.navasmdc\MaterialDesign\1.5\jars\classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="12b228574de7977e56e41cbfb385b1463bbdb41a">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\classes-4a1af5a8263bffe501a1325fdb7beb7d4af530ff.jar" />
+    </item>
+    <item
+        jar="E:\Sdk\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="E:\GitAndroid_projects\RunTime\app\build\intermediates\pre-dexed\release\support-annotations-22.2.0-fe8ea765e7c6238e26597a51f0dbac4b9546a50c.jar" />
     </item>
 
 </items>
