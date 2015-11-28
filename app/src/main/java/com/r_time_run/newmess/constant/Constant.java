@@ -9,4 +9,5 @@ public class Constant {
 
     public static final String url = "http://192.168.1.112:8080/NewMess/";
     public final static String URL_FOODS = url+"servlet/ClientSide";
+    public final static String URL_USER = url+"servlet/UserHandle";
 }
