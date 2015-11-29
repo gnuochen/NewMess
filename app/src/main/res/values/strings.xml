@@ -18,4 +18,5 @@
     <string name="title_activity_atools">AToolsActivity</string>
     <string name="title_activity_photo">PhotoActivity</string>
     <string name="title_activity_back_order">BackOrder</string>
+    <string name="title_activity_invite_dine">InviteDineActivity</string>
 </resources>

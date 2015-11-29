@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
@@ -84,6 +85,10 @@
         <activity
             android:name=".subactivity.BackOrder"
             android:label="@string/title_activity_back_order" >
+        </activity>
+        <activity
+            android:name=".subactivity.InviteDineActivity"
+            android:label="@string/title_activity_invite_dine" >
         </activity>
     </application>
 

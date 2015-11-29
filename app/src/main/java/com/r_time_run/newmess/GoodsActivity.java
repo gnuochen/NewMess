@@ -24,6 +24,8 @@ public class GoodsActivity extends AppCompatActivity {
 
     List<Map<String, Object>> listItems;
     ListView listView;
+    private ImageView imBack;
+
 
     private int[] imageIds=new int[]
             {
@@ -35,6 +37,13 @@ public class GoodsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_goods);
+        imBack= (ImageView) findViewById(R.id.im_back);
+        imBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         listView = (ListView) findViewById(R.id.listView);
 
@@ -112,4 +121,5 @@ public class GoodsActivity extends AppCompatActivity {
             return view;
         }
     }
+
 }
