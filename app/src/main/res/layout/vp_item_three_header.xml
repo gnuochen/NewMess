@@ -3,10 +3,11 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
+        android:id="@+id/shop_header_return"
         android:layout_width="fill_parent"
         android:layout_height="45dp"
         android:gravity="center_vertical"
-        android:background="#fb894b">
+        android:background="@drawable/first_yuefanlianmeng">
         <ImageView
             android:layout_marginLeft="20dp"
             android:layout_width="30dp"
@@ -20,7 +21,6 @@
            />
         <TextView
             android:layout_marginLeft="60dp"
-            android:id="@+id/shop_header_return"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"

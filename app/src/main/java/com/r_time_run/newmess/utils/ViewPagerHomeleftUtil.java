@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -54,10 +55,9 @@ public class ViewPagerHomeleftUtil {
         View viewone = views.get(0);
         mPullRefreshListView = (PullToRefreshGridView) viewone.findViewById(R.id.pull_refresh_grid);
         initIndicator();
-        final View gridview_header = viewone.findViewById(R.id.gridview_header);
         mPullRefreshListView.setAdapter(gridViewAdapter);
 //        设置返回button
-        TextView foods_header_return = (TextView) viewone.findViewById(R.id.foods_header_return);
+        LinearLayout foods_header_return = (LinearLayout) viewone.findViewById(R.id.food_header_return);
         foods_header_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

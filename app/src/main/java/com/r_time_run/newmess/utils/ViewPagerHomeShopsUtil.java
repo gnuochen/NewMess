@@ -19,13 +19,10 @@ import com.r_time_run.newmess.adapter.ShopViewAdapter;
 import com.r_time_run.newmess.subactivity.ShopActivity;
 
 import java.util.ArrayList;
-
-
 /**
  * Created by nuochen on 2015/9/11.
  */
 public class ViewPagerHomeShopsUtil {
-
     private LayoutInflater li;
     private ShopViewAdapter shopViewAdapter;
     private Context context;
@@ -34,7 +31,6 @@ public class ViewPagerHomeShopsUtil {
     private int tag;
     private ViewPager mViewpager;
     private PullToRefreshListView mPullRefreshListView;
-
     /**
      * 初始化好店加载工具类
      */
@@ -46,9 +42,7 @@ public class ViewPagerHomeShopsUtil {
         this.tag = tag;
         this.mViewpager = mViewpager;
         li = LayoutInflater.from(context);
-
     }
-
     /**
      * 今日好店加载方法
      */
@@ -57,18 +51,16 @@ public class ViewPagerHomeShopsUtil {
         mPullRefreshListView = (PullToRefreshListView) viewone.findViewById(R.id.pull_refresh_list);
         initIndicator();//上啦刷新下拉加载提示语
         //        添加headerview
-        TextView shop_header_return = (TextView) viewone.findViewById(R.id.shop_header_return);
+        LinearLayout shop_header_return = (LinearLayout) viewone.findViewById(R.id.shop_header_return);
         shop_header_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mViewpager.setCurrentItem(1);
             }
         });
-
         mPullRefreshListView.setAdapter(shopViewAdapter);
         return mPullRefreshListView;
     }
-
     private void initIndicator() {
         ILoadingLayout startLabels = mPullRefreshListView
                 .getLoadingLayoutProxy(true, false);
@@ -82,6 +74,4 @@ public class ViewPagerHomeShopsUtil {
         endLabels.setRefreshingLabel("好赖，正在刷新2...");
         endLabels.setReleaseLabel("你敢放我就敢刷新2...");
     }
-
-
 }

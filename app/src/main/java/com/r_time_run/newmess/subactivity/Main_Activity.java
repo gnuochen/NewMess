@@ -63,11 +63,15 @@ public class Main_Activity extends BaseActivity {
     private PullToRefreshGridView mPullRefreshListView;
     private PullToRefreshListView mPullRefreshShopView;
 //    今日好店
-    private LinearLayout shop_show_fromall;// = (LinearLayout) views.get(2).findViewById(R.id.goodshop_fromall);//综合排序
-    private LinearLayout shop_show_fromtuijian; //= (LinearLayout) views.get(2).findViewById(R.id.goodshop_fromtuijian);//推荐度排序
-    private View show0; //= shop_show_fromall.findViewById(R.id.shop_show_0);
-    private View show1; //= shop_show_fromall.findViewById(R.id.shop_show_1);
-
+    private LinearLayout shop_show_fromall;//综合排序
+    private LinearLayout shop_show_fromtuijian; //推荐度排序
+    private View show0;
+    private View show1;
+//    搭配推荐
+    private LinearLayout food_show_fromall0;//综合排序
+    private LinearLayout food_show_fromtuijian0; //推荐度排序
+    private View show2;
+    private View show3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,6 +114,10 @@ public class Main_Activity extends BaseActivity {
 
 
 //        对第二个页面进行填充
+        food_show_fromall0 = (LinearLayout) views.get(0).findViewById(R.id.goodfood_fromall);//综合排序
+        food_show_fromtuijian0 = (LinearLayout) views.get(0).findViewById(R.id.goodfood_fromtuijian);//推荐度排序
+        show2 = food_show_fromall0.findViewById(R.id.shop_show_2);
+        show3 = food_show_fromtuijian0.findViewById(R.id.shop_show_3);
         initeViewPangetTwo();
 
     }
@@ -148,7 +156,22 @@ public class Main_Activity extends BaseActivity {
 //        使用同构类填充完善viewpager
         vpHomeleftClass = new ViewPagerHomeleftUtil(this, views, svAdapterOnePager, mHandler,mViewPager, TAG_SELECT_FOODS);
         mPullRefreshListView = vpHomeleftClass.viewPagerHomeleftctrol();
+//        设置选择页面的两个过滤方法
 
+        food_show_fromall0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show2.setVisibility(View.VISIBLE);
+                show3.setVisibility(View.INVISIBLE);
+            }
+        });
+        food_show_fromtuijian0.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show2.setVisibility(View.INVISIBLE);
+                show3.setVisibility(View.VISIBLE);
+            }
+        });
         mPullRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<GridView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<GridView> refreshView) {

@@ -38,14 +38,12 @@ public class ViewPagerHomeUtil {
     public ViewPagerHomeUtil(Context context,ArrayList<View> views, Handler mHandler,ViewPager mViewPager,int tag) {
         this.context=context;
         this.views=views;
-//        this.svAdapterUp=svAdapterUp;
-//        this.svAdapterDown=svAdapterDown;
         this.mHandler=mHandler;
         this.tag=tag;
         this.mViewPager=mViewPager;
         li=LayoutInflater.from(context);
     }
-//    final ArrayList<ArrayList<GoodsBean>> list
+
     /**
      *        初始化homeviewpager
      *
