@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -34,35 +35,36 @@ public class ViewPagerHomeShopsUtil {
     private ViewPager mViewpager;
     private PullToRefreshListView mPullRefreshListView;
 
-    public ViewPagerHomeShopsUtil(Context context, ArrayList<View> views, ShopViewAdapter shopViewAdapter, Handler mhandler,ViewPager mViewpager ,int tag) {
+    /**
+     * 初始化好店加载工具类
+     */
+    public ViewPagerHomeShopsUtil(Context context, ArrayList<View> views, ShopViewAdapter shopViewAdapter, Handler mhandler, ViewPager mViewpager, int tag) {
         this.context = context;
         this.views = views;
         this.shopViewAdapter = shopViewAdapter;
         this.mhandler = mhandler;
         this.tag = tag;
-        this.mViewpager=mViewpager;
+        this.mViewpager = mViewpager;
         li = LayoutInflater.from(context);
 
     }
 
+    /**
+     * 今日好店加载方法
+     */
     public PullToRefreshListView viewPagerHomeShopsctrol() {
-        View viewone = views.get(2);
+        View viewone = views.get(2); //设置viewpager第三页为今日好店页面
         mPullRefreshListView = (PullToRefreshListView) viewone.findViewById(R.id.pull_refresh_list);
-        initIndicator();
-
-//        添加headerview
-        AbsListView.LayoutParams layoutParams = new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.WRAP_CONTENT);
-        View header = li.inflate(R.layout.vp_item_three_header,mPullRefreshListView, false);
-        TextView shop_header_return = (TextView) header.findViewById(R.id.shop_header_return);
+        initIndicator();//上啦刷新下拉加载提示语
+        //        添加headerview
+        TextView shop_header_return = (TextView) viewone.findViewById(R.id.shop_header_return);
         shop_header_return.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 mViewpager.setCurrentItem(1);
             }
         });
-        header.setLayoutParams(layoutParams);
-        ListView lv = mPullRefreshListView.getRefreshableView();
-        lv.addHeaderView(header);
+
         mPullRefreshListView.setAdapter(shopViewAdapter);
         return mPullRefreshListView;
     }

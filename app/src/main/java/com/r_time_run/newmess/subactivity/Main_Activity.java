@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Gallery;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -61,6 +62,11 @@ public class Main_Activity extends BaseActivity {
     private ShopViewAdapter svadapterThreePager;
     private PullToRefreshGridView mPullRefreshListView;
     private PullToRefreshListView mPullRefreshShopView;
+//    今日好店
+    private LinearLayout shop_show_fromall;// = (LinearLayout) views.get(2).findViewById(R.id.goodshop_fromall);//综合排序
+    private LinearLayout shop_show_fromtuijian; //= (LinearLayout) views.get(2).findViewById(R.id.goodshop_fromtuijian);//推荐度排序
+    private View show0; //= shop_show_fromall.findViewById(R.id.shop_show_0);
+    private View show1; //= shop_show_fromall.findViewById(R.id.shop_show_1);
 
 
     @Override
@@ -82,7 +88,7 @@ public class Main_Activity extends BaseActivity {
         initeViewPagerOne();
         vpHomeClass.initeViewTwoContrls();
         mViewPager.setCurrentItem(1);
-        /*
+        /**
         *通过服务器获取数据
         * */
         NMParameters paramsleft = new NMParameters();
@@ -96,7 +102,12 @@ public class Main_Activity extends BaseActivity {
         svadapterThreePager = new ShopViewAdapter(this,lvBeanPagerThreeconcent);
 
 //        对第三个页面进行填充
+        shop_show_fromall = (LinearLayout) views.get(2).findViewById(R.id.goodshop_fromall);//综合排序
+        shop_show_fromtuijian = (LinearLayout) views.get(2).findViewById(R.id.goodshop_fromtuijian);//推荐度排序
+        show0 = shop_show_fromall.findViewById(R.id.shop_show_0);
+        show1 = shop_show_fromtuijian.findViewById(R.id.shop_show_1);
         initeViewPangetThree();
+
 
 //        对第二个页面进行填充
         initeViewPangetTwo();
@@ -137,6 +148,7 @@ public class Main_Activity extends BaseActivity {
 //        使用同构类填充完善viewpager
         vpHomeleftClass = new ViewPagerHomeleftUtil(this, views, svAdapterOnePager, mHandler,mViewPager, TAG_SELECT_FOODS);
         mPullRefreshListView = vpHomeleftClass.viewPagerHomeleftctrol();
+
         mPullRefreshListView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<GridView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<GridView> refreshView) {
@@ -171,6 +183,25 @@ public class Main_Activity extends BaseActivity {
     private void initeViewPangetThree(){
         vpHomeShopClass = new ViewPagerHomeShopsUtil(this, views,svadapterThreePager, mHandler,mViewPager,301);
         mPullRefreshShopView = vpHomeShopClass.viewPagerHomeShopsctrol();
+
+        //        设置选择页面的两个过滤方法
+
+        shop_show_fromall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show0.setVisibility(View.VISIBLE);
+                show1.setVisibility(View.INVISIBLE);
+            }
+        });
+        shop_show_fromtuijian.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                show0.setVisibility(View.INVISIBLE);
+                show1.setVisibility(View.VISIBLE);
+            }
+        });
+
+
         mPullRefreshShopView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener2<ListView>() {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
@@ -266,6 +297,7 @@ public class Main_Activity extends BaseActivity {
             mPullRefreshShopView.onRefreshComplete();
         }
     }
+
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
