@@ -17,7 +17,7 @@
             android:background="#FF8462"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="50dp"
             android:text="食堂信息"
             android:textSize="18sp"
             android:textColor="#ffffff"/>
