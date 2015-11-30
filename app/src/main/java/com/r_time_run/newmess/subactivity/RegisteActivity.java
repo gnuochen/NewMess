@@ -3,6 +3,7 @@ package com.r_time_run.newmess.subactivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Message;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
@@ -29,7 +30,7 @@ public class RegisteActivity extends BaseActivity {
     private Switch sw_logintype;
     private LinearLayout ll_registelayout,ll_student_id,ll_student_subserver_password;
     private String loginType;
-    private Boolean isRegisted;
+    private boolean isRegisted;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,7 +175,7 @@ public class RegisteActivity extends BaseActivity {
         registerParames.add("email",et_email.getText().toString());
         registerParames.add("phone",et_phone.getText().toString());
         registerParames.add("logintype",loginType);
-        getData(TAG_REGISTER_PUT, Constant.URL_FOODS,registerParames,"POST");
+        getData(TAG_REGISTER_PUT, Constant.URL_FOODS_TEXT,registerParames,"POST");
     }
 
     @Override
@@ -185,9 +186,10 @@ public class RegisteActivity extends BaseActivity {
             JSONObject obj = new JSONObject(json);
             if (msg.what == TAG_REGISTER_PUT){
                 isRegisted = obj.getBoolean("state");
-                //Toast.makeText(RegisteActivity.this,isRegisted+"",Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisteActivity.this,isRegisted+"",Toast.LENGTH_SHORT).show();
                 if (isRegisted){
                     Toast.makeText(RegisteActivity.this, "注册成功",Toast.LENGTH_SHORT).show();
+                    Log.e("RegisteActivity","注册成功");
                     backToFirstActivity(); //返回主页进行登录
                 }
             }
