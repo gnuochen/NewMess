@@ -18,6 +18,7 @@ import com.r_time_run.newmess.GoodsActivity;
 import com.r_time_run.newmess.R;
 import com.r_time_run.newmess.constant.ConstantHome;
 import com.r_time_run.newmess.listener.MyGestureListener;
+import com.r_time_run.newmess.subactivity.InviteDineActivity;
 import com.r_time_run.newmess.subactivity.SquareActivity;
 import com.r_time_run.newmess.view.ElasticScrollView;
 
@@ -37,14 +38,12 @@ public class ViewPagerHomeUtil {
     public ViewPagerHomeUtil(Context context,ArrayList<View> views, Handler mHandler,ViewPager mViewPager,int tag) {
         this.context=context;
         this.views=views;
-//        this.svAdapterUp=svAdapterUp;
-//        this.svAdapterDown=svAdapterDown;
         this.mHandler=mHandler;
         this.tag=tag;
         this.mViewPager=mViewPager;
         li=LayoutInflater.from(context);
     }
-//    final ArrayList<ArrayList<GoodsBean>> list
+
     /**
      *        初始化homeviewpager
      *
@@ -62,6 +61,14 @@ public class ViewPagerHomeUtil {
         LinearLayout first_friends = (LinearLayout) scrollView.findViewById(R.id.first_friends);
         LinearLayout first_news = (LinearLayout) scrollView.findViewById(R.id.first_news);
         LinearLayout tv_goto_foodsquare = (LinearLayout) scrollView.findViewById(R.id.tv_goto_foodsquare);
+        LinearLayout first_yuefan = (LinearLayout) scrollView.findViewById(R.id.first_yuefan);
+        first_yuefan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, InviteDineActivity.class);
+                context.startActivity(intent);
+            }
+        });
         first_goodshop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

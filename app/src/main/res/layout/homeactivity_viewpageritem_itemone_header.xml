@@ -17,7 +17,7 @@
             android:id="@+id/view1"
             android:layout_width="60dp"
             android:layout_height="3dp"
-            android:background="#ff990a"
+            android:background="#fff"
             android:layout_weight="25"
             />
         <View

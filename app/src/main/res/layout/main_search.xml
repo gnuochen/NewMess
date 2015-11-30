@@ -29,7 +29,7 @@
             android:layout_weight="8"
             android:clickable="true"
             android:gravity="center"
-            android:text="你所在大学时五邑大学"
+            android:text="你所在大学是五邑大学"
             android:textColor="#fff"
             android:textSize="16sp"
             />

@@ -183,6 +183,7 @@
         android:layout_marginLeft="6dp"
         android:layout_marginRight="6dp">
         <LinearLayout
+            android:id="@+id/first_yuefan"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"

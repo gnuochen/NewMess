@@ -58,7 +58,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
     private SharedPreferences sp;       //下次打开时显示上次的账号和密码
     public static Boolean registeToFirst = false;
     public static Boolean isLogined = false;       //判断是否已经登录
-    private Boolean isLoginState = false;            //返回的登录状态码
+    private boolean isLoginState;            //返回的登录状态码
 
     private EditText et_user_name, et_user_password;
     private CheckBox cb_remery_user_password;
@@ -210,9 +210,9 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
         //请求服务器进行登陆
         NMParameters loginParames = new NMParameters();
         loginParames.add("action", "login");
-        loginParames.add("name", et_user_name.getText().toString());
-        loginParames.add("password", et_user_password.getText().toString());
-        getData(TAG_LOGIN, Constant.URL_FOODS, loginParames, "POST");
+        loginParames.add("user_number", et_user_name.getText().toString());
+        loginParames.add("user_password", et_user_password.getText().toString());
+        getData(TAG_LOGIN, Constant.URL_FOODS_TEXT, loginParames, "POST");
     }
 
     @Override
