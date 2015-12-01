@@ -2,30 +2,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.r_time_run.newmess.subactivity.InviteDineActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.r_time_run.newmess.subactivity.InviteDineActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
         <ImageView
-            android:id="@+id/im_back"
+            android:id="@+id/iv_back"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:src="@drawable/fanhui"
-            android:background="#FF8462"/>
-        <TextView
             android:background="#FF8462"
-            android:gravity="center"
+            android:clickable="true"
+            android:src="@drawable/fanhui" />
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:background="#FF8462"
+            android:gravity="center"
             android:text="约饭联盟"
-            android:textSize="18sp"
-            android:textColor="#ffffff"/>
+            android:textColor="#ffffff"
+            android:textSize="18sp" />
     </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/invitedine">
+
+        <ImageView
+            android:id="@+id/iv_invite"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="48dp"
+            android:background="@drawable/iv_invite_style"
+            android:clickable="true" />
+
+        <ImageView
+            android:id="@+id/iv_friend"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@+id/iv_invite"
+            android:background="@drawable/iv_friend_style"
+            android:clickable="true" />
 
     </RelativeLayout>
 

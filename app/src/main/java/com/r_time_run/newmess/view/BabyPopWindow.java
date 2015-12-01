@@ -39,17 +39,6 @@ public class BabyPopWindow implements OnDismissListener, OnClickListener {
 	private String foodPrice;
 	private String foodNum;
 
-
-//	private Handler handler=new Handler() {
-//		@Override
-//		public void handleMessage(Message msg) {
-//			super.handleMessage(msg);
-//			Bundle b =msg.getData();
-//			foodName=b.getString("foodName");
-//			foodLocation=b.getString("foodLocation");
-//			foodPrice=b.getString("foodPrice");
-//		}
-//	};
 	
 	
 	public BabyPopWindow(Context context,String foodName,String foodLocation,String foodPrice) {
