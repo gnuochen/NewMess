@@ -50,7 +50,7 @@ public class SquareActivity extends BaseActivity {
             list.add("" + i);
         }
         SquareViewAdapter squareViewAdapter = new SquareViewAdapter(this, list);
-
+//加入头布局
         AbsListView.LayoutParams layoutParams = new AbsListView.LayoutParams(AbsListView.LayoutParams.MATCH_PARENT, AbsListView.LayoutParams.WRAP_CONTENT);
         View header = li.inflate(R.layout.activity_square_header, mPullRefreshSquareView, false);
 

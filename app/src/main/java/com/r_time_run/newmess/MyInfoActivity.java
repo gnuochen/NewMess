@@ -13,6 +13,7 @@ import android.os.Message;
 import android.support.v4.widget.DrawerLayout;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.LinearInterpolator;
@@ -58,7 +59,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
     private SharedPreferences sp;       //下次打开时显示上次的账号和密码
     public static Boolean registeToFirst = false;
     public static Boolean isLogined = false;       //判断是否已经登录
-    private boolean isLoginState;            //返回的登录状态码
+    private String isLoginState;            //返回的登录状态码
 
     private EditText et_user_name, et_user_password;
     private CheckBox cb_remery_user_password;
@@ -208,11 +209,18 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
                 animate(progressAction).
                 play();
         //请求服务器进行登陆
-        NMParameters loginParames = new NMParameters();
+        final NMParameters loginParames = new NMParameters();
         loginParames.add("action", "login");
-        loginParames.add("user_number", et_user_name.getText().toString());
-        loginParames.add("user_password", et_user_password.getText().toString());
-        getData(TAG_LOGIN, Constant.URL_FOODS_TEXT, loginParames, "POST");
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("user_number", et_user_name.getText().toString());
+            jsonObject.put("user_password", et_user_password.getText().toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        loginParames.add("login", jsonObject.toString());
+
+        getData(TAG_LOGIN, Constant.URL_FOODS, loginParames, "POST");
     }
 
     @Override
@@ -305,12 +313,13 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
     public void handleMsg(Message msg) {
         Bundle data = msg.getData();
         String json = data.getString("json");
-        System.out.println("!!!!"+json);
+        System.out.println("!!!!" + json);
+        System.out.println("!!!!" + msg.what);
         try {
             JSONObject obj = new JSONObject(json);
             if (msg.what == TAG_LOGIN) {
-                isLoginState = obj.getBoolean("state");
-                if (isLoginState) {
+                isLoginState = obj.getString("state");
+                if (isLoginState.equals("0x00")) {
                     ll_login_content.setVisibility(View.VISIBLE);
                     isLogined = true;       //登录成功
                     remeryUserPassword();               //是否记住密码
@@ -332,6 +341,12 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
                             }
                         }
                     }, 300);
+                } else if (isLoginState.equals("0x02")){
+                    Log.e("MyInfoActivity","密码错误");
+                    Toast.makeText(MyInfoActivity.this,"密码错误",Toast.LENGTH_SHORT).show();
+                } else if (isLoginState.equals("0x01")){
+                    Log.e("MyInfoActivity","账号错误");
+                    Toast.makeText(MyInfoActivity.this,"账号错误",Toast.LENGTH_SHORT).show();
                 }
             }
         } catch (JSONException e) {
