@@ -22,12 +22,20 @@ public class News_Activity extends AppCompatActivity {
     private TextView tvNews;
     private final int[] imageIDs={R.drawable.news1,R.drawable.news1};
     private ArrayList<ImageView> imageList;
+    private TextView tvBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
         vpNews = (ViewPager) findViewById(R.id.vp_news);
+        tvBack= (TextView) findViewById(R.id.iv_back);
+        tvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         llPointgroup= (LinearLayout) findViewById(R.id.ll_pointgroup);
 //        初始化图片资源
         imageList=new ArrayList<ImageView>();
