@@ -208,6 +208,7 @@
                 android:textStyle="bold" />
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/first_parttime"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="3dp"

@@ -21,6 +21,7 @@ import com.r_time_run.newmess.listener.MyGestureListener;
 import com.r_time_run.newmess.subactivity.InviteDineActivity;
 import com.r_time_run.newmess.subactivity.Main_Activity;
 import com.r_time_run.newmess.subactivity.News_Activity;
+import com.r_time_run.newmess.subactivity.PartTimeActivity;
 import com.r_time_run.newmess.subactivity.SquareActivity;
 import com.r_time_run.newmess.view.ElasticScrollView;
 
@@ -64,6 +65,14 @@ public class ViewPagerHomeUtil {
         LinearLayout first_news = (LinearLayout) scrollView.findViewById(R.id.first_news);
         LinearLayout tv_goto_foodsquare = (LinearLayout) scrollView.findViewById(R.id.tv_goto_foodsquare);
         LinearLayout first_yuefan = (LinearLayout) scrollView.findViewById(R.id.first_yuefan);
+        LinearLayout first_parttime = (LinearLayout) scrollView.findViewById(R.id.first_parttime);
+        first_parttime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, PartTimeActivity.class);
+                context.startActivity(intent);
+            }
+        });
         first_news.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
