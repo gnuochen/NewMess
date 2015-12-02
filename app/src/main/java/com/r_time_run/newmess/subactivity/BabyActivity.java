@@ -20,10 +20,12 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.r_time_run.newmess.GoodsActivity;
 import com.r_time_run.newmess.R;
 import com.r_time_run.newmess.adapter.Adapter_ListView_detail;
 import com.r_time_run.newmess.bean.CommentBean;
 import com.r_time_run.newmess.bean.ReplyBean;
+import com.r_time_run.newmess.net.LoadImage;
 import com.r_time_run.newmess.view.BabyPopWindow;
 import com.r_time_run.newmess.view.HackyViewPager;
 
@@ -58,16 +60,22 @@ public class BabyActivity extends FragmentActivity {
     private String foodPrice;
     private int foodImageID[];
     private int subcategoryPosition;
+    private String foodImage;
+    private int chang=1;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.babydetail_a);
-
         tvFoodName= (TextView) findViewById(R.id.tv_babyactivity_foodname);
         tvFoodLocation= (TextView) findViewById(R.id.tv_babyactivity_foodlocation);
         tvFoodPrice= (TextView) findViewById(R.id.tv_babyactivity_foodprice);
+        if(getIntent().getExtras().getString("TAG").equals("GOODFOOD")){
+
+            foodImage = getIntent().getExtras().getString("foodImage");
+            chang = 2;
+        }
         foodName=getIntent().getExtras().getString("foodName");
         foodLocation=getIntent().getExtras().getString("foodLocation");
         foodPrice=getIntent().getExtras().getString("foodPrice");
@@ -93,15 +101,6 @@ public class BabyActivity extends FragmentActivity {
         initView();
     }
 
-//    private void sendValueToPopWindow(){
-//        Message msg=Message.obtain();
-//        Bundle b=new Bundle();
-//        b.putString("foodName",foodName);
-//        b.putString("foodLocation",foodLocation);
-//        b.putString("foodPrice",foodPrice);
-//        msg.setData(b);
-//        msg.sendToTarget();
-//    }
 
     private void initView() {
 //        ((ImageView) findViewById(R.id.iv_back)).setOnClickListener(this);
@@ -147,45 +146,14 @@ public class BabyActivity extends FragmentActivity {
 
             }
         });
-
-
         initViewPager();
     }
-
 //刷新的方法
     public void refresh(){
 
         findViewById(R.id.ll_baby).invalidate();
         Toast.makeText(this,"刷新完成",Toast.LENGTH_SHORT).show();
     }
-//    @Override
-//    public void onClick(View view) {
-//        switch (view.getId()) {
-//            case R.id.iv_back:
-//                //返回
-//                finish();
-//                break;
-//            case R.id.iv_baby_collection:
-//                //收藏
-//                if (isCollection) {
-//                    //提示是否取消收藏
-//                    cancelCollection();
-//                }else {
-//                    isCollection=true;
-//                    setSaveCollection();
-//                    //如果已经收藏，则显示收藏后的效果
-//                    iv_baby_collection.setImageResource(R.drawable.second_2_collection);
-//                    Toast.makeText(this, "收藏成功", Toast.LENGTH_SHORT).show();
-//                }
-//                break;
-//            case R.id.buy_now:
-//                //立即购买
-//                isClickBuy = true;
-//                setBackgroundBlack(all_choice_layout, 0);
-//                popWindow.showAsDropDown(view);
-//                break;
-//        }
-//    }
 
     /**
      * 控制背景变暗 0变暗 1变亮
@@ -209,10 +177,14 @@ public class BabyActivity extends FragmentActivity {
         }
         allListView = new ArrayList<View>();
 
-        for (int i = 0; i < foodImageID.length; i++) {
+        for (int i = 0; i < 1; i++) {
             View view = LayoutInflater.from(this).inflate(R.layout.pic_item, null);
             ImageView imageView = (ImageView) view.findViewById(R.id.pic_item);
-            imageView.setImageResource(foodImageID[subcategoryPosition]);
+            if (chang==2){
+                new LoadImage(this).loadDrawable(foodImage, imageView);
+            }else {
+                imageView.setImageResource(foodImageID[subcategoryPosition]);
+            }
             imageView.setOnClickListener(new OnClickListener() {
                 @Override
                 public void onClick(View arg0) {

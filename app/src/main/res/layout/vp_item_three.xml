@@ -13,7 +13,7 @@
         android:cacheColorHint="#00000000"
         android:divider="#19000000"
         android:dividerHeight="10dp"
-        ptr:ptrHeaderBackground="@drawable/main_4"
+        ptr:ptrHeaderBackground="#ffb93e"
         ptr:ptrHeaderSubTextColor="#fffcef"
         android:fadingEdge="none"
         android:fastScrollEnabled="false"
@@ -23,5 +23,5 @@
         ptr:ptrListViewExtrasEnabled="false"
         ptr:ptrAnimationStyle="flip"
         ptr:ptrMode="both"
-        ptr:ptrScrollingWhileRefreshingEnabled="true" />
+        ptr:ptrScrollingWhileRefreshingEnabled="true"/>
 </LinearLayout>

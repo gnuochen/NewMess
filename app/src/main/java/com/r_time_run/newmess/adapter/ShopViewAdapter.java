@@ -2,6 +2,7 @@ package com.r_time_run.newmess.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +26,7 @@ public class ShopViewAdapter extends BaseAdapter implements ListAdapter{
     private Context context;
     private ArrayList<ShopsBean> list;
     private LayoutInflater li;
+    ShopsBean bean;
     public ShopViewAdapter(Context context, ArrayList<ShopsBean> list){
         this.context = context;
         this.list = list;
@@ -59,7 +61,7 @@ public class ShopViewAdapter extends BaseAdapter implements ListAdapter{
 //            vh.tv_shop_name = (TextView) convertView.findViewById(R.id.tv_shop_name);
 //            vh.tv_shop_praise = (TextView) convertView.findViewById(R.id.tv_shop_praise);
 //            vh.tv_shop_decribe = (TextView) convertView.findViewById(R.id.tv_shop_decribe);
-            vh.iv_shop_into = (ImageView) convertView.findViewById(R.id.iv_shop_into);
+            vh.iv_shop_into = (TextView) convertView.findViewById(R.id.iv_shop_into);
             vh.iv_shop_image1 = (ImageView) convertView.findViewById(R.id.shop_image1);
             vh.iv_shop_image2 = (ImageView) convertView.findViewById(R.id.shop_image2);
             vh.iv_shop_image3= (ImageView) convertView.findViewById(R.id.shop_image3);
@@ -68,7 +70,7 @@ public class ShopViewAdapter extends BaseAdapter implements ListAdapter{
             convertView.setTag(vh);
         }else vh=(ViewHolder) convertView.getTag();
 
-        ShopsBean bean=list.get(position);
+       bean=list.get(position);
         new LoadImage(context).loadDrawable(bean.getShops_image(), vh.shop_image);
 //        vh.tv_shop_name.setText(bean.getShops_name());
 //        vh.tv_shop_praise.setText(bean.getPraise_scale()+"赞");
@@ -80,8 +82,14 @@ public class ShopViewAdapter extends BaseAdapter implements ListAdapter{
         vh.iv_shop_into.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent intent = new Intent(context, ShopActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("shop_image",bean.getShops_image());
+                bundle.putString("shop_image1",bean.getShow_image1());
+                bundle.putString("shop_image2",bean.getShow_image2());
+                bundle.putString("shop_image3",bean.getShow_image3());
+                bundle.putString("shop_image4",bean.getShow_image4());
+                intent.putExtras(bundle);
                 context.startActivity(intent);
             }
         });
@@ -89,7 +97,7 @@ public class ShopViewAdapter extends BaseAdapter implements ListAdapter{
     }
     class ViewHolder{
         ImageView shop_image;
-        ImageView iv_shop_into;
+        TextView iv_shop_into;
 
         ImageView iv_shop_image1;
         ImageView iv_shop_image2;

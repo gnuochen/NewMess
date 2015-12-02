@@ -90,6 +90,10 @@
             android:name=".subactivity.InviteDineActivity"
             android:label="@string/title_activity_invite_dine" >
         </activity>
+        <activity
+            android:name=".subactivity.PartTimeActivity"
+            android:label="@string/title_activity_part_time" >
+        </activity>
     </application>
 
 </manifest>

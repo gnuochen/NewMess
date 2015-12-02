@@ -14,32 +14,18 @@ import com.r_time_run.newmess.subactivity.SquareActivity;
 public class FirstActivity extends TabActivity {
 
 
-    /*
-    * gaoyanlong
-    * */
     TabHost tabHost;
     private ImageView tv_food, tv_thing, tv_news;
-
-    /*
-    * caojiajie
-    * */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
-        
-        /*
-        * gaoyanlong
-        * */
+
         initTab();
         init();
 
     }
 
-
-    /*
-    * gaoyanlong
-    * */
     public void init() {
         tv_thing = (ImageView) findViewById(R.id.ll_home);
         tv_news = (ImageView) findViewById(R.id.ll_user);

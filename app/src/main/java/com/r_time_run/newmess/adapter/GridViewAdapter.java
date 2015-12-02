@@ -25,6 +25,7 @@ public class GridViewAdapter extends BaseAdapter implements ListAdapter{
     private Context context;
     private ArrayList<FoodsBean> list;
     private LayoutInflater li;
+    private FoodsBean bean;
     public GridViewAdapter(Context context,ArrayList<FoodsBean> list){
         this.context = context;
         this.list = list;
@@ -63,23 +64,25 @@ public class GridViewAdapter extends BaseAdapter implements ListAdapter{
         }else
             vh=(ViewHolder) convertView.getTag();
 
-        FoodsBean bean=list.get(position);
+        bean=list.get(position);
         new LoadImage(context).loadDrawable(bean.getFoods_image(), vh.iv_foods_image);
         vh.tv_foods_name.setText(bean.getFoods_name());
         vh.tv_foods_price.setText("价格￥："+bean.getNew_price()+"元");
         vh.tv_foods_praise.setText(bean.getPraise_scale()+"赞");
 
-        //设置图片的点击事件
+//        设置图片的点击事件
         vh.iv_foods_image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, BabyActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("foodName","0");
-                bundle.putString("foodLocation","0");
-                bundle.putString("foodPrice","0");
-                bundle.putIntArray("foodImageID",new int[]{0});
+                bundle.putString("foodName",bean.getFoods_name());
+                bundle.putString("foodLocation",bean.getFoods_location());
+                bundle.putString("foodPrice",bean.getNew_price()+"");
+                bundle.putIntArray("foodImageID", new int[]{0});
+                bundle.putString("foodImage",bean.getFoods_image());
                 bundle.putInt("subcategoryPosition",0);
+                bundle.putString("TAG","GOODFOOD");
                 intent.putExtras(bundle);
                 context.startActivity(intent);
 

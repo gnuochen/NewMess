@@ -19,4 +19,5 @@
     <string name="title_activity_photo">PhotoActivity</string>
     <string name="title_activity_back_order">BackOrder</string>
     <string name="title_activity_invite_dine">InviteDineActivity</string>
+    <string name="title_activity_part_time">PartTimeActivity</string>
 </resources>

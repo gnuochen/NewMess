@@ -2,6 +2,7 @@ package com.r_time_run.newmess.utils;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
@@ -20,6 +21,7 @@ import com.r_time_run.newmess.adapter.GridViewAdapter;
 import java.util.ArrayList;
 
 import com.r_time_run.newmess.R;
+import com.r_time_run.newmess.bean.FoodsBean;
 import com.r_time_run.newmess.subactivity.BabyActivity;
 import com.r_time_run.newmess.subactivity.Main_Activity;
 

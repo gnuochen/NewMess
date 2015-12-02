@@ -279,6 +279,7 @@ public class SubcategoryActivity extends BaseActivity {
                         intent.putExtra("foodPrice",foodPrice);
                         intent.putExtra("foodImageID",foodImageID);
                         intent.putExtra("subcategoryPosition",listView1Position);
+                        intent.putExtra("TAG","GOODACTIVITY");
                         startActivity(intent);
                         break;
                 }

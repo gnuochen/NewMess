@@ -31,6 +31,7 @@ import com.r_time_run.newmess.bean.FoodsBean;
 import com.r_time_run.newmess.bean.ReplyBean;
 import com.r_time_run.newmess.bean.ShopsBean;
 import com.r_time_run.newmess.constant.Constant;
+import com.r_time_run.newmess.net.LoadImage;
 import com.r_time_run.newmess.net.NMParameters;
 import com.r_time_run.newmess.utils.ACache;
 import com.r_time_run.newmess.utils.JSONUtil;
@@ -39,13 +40,14 @@ import com.r_time_run.newmess.view.HackyViewPager;
 import com.r_time_run.newmess.view.MyGridView;
 import com.r_time_run.newmess.view.MyListView;
 import com.viewpagerindicator.TabPageIndicator;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class ShopActivity extends BaseActivity {
 
-    private ArrayList<View>  allListView;
-    private int [] resId = {R.drawable.cute_boy_08,R.drawable.cute_boy_18,R.drawable.cute_boy_16,R.drawable.cute_boy_18,R.drawable.cute_boy_10};
+    private ArrayList<View> allListView;
+    private int[] resId = {R.drawable.cute_boy_08, R.drawable.cute_boy_18, R.drawable.cute_boy_16, R.drawable.cute_boy_18, R.drawable.cute_boy_10};
     private int position = 0;
     private HackyViewPager viewPager;
     private ViewPager pager;
@@ -53,23 +55,23 @@ public class ShopActivity extends BaseActivity {
     private PullToRefreshGridView vp_foods;
     private PullToRefreshListView vp_comment;
     private LayoutInflater li;
-    private List<String> titleList;
+    private List<String> titleList, imageurl;
     private TabPageIndicator indicator;
-    private int [] rid;
+    private int[] rid;
     private ViewPagerHomeleftUtil vpHomeleftClass;
-    private int whichPage =0;
+    private int whichPage = 0;
 
-//    对shop页面进行填充
+    //    对shop页面进行填充
     private ArrayList<FoodsBean> gvBeanPagershopconcent;
     private GridViewAdapter svAdapterShopPager;
 
-    private View gvShopFoods,lvShopComment;
-//  评论区域
+    private View gvShopFoods, lvShopComment;
+    //  评论区域
     private com.r_time_run.newmess.view.MyListView listView;
     Adapter_ListView_detail adapter;
-    private int count;					//记录评论ID
+    private int count;                    //记录评论ID
     private List<CommentBean> list;
-    private int[] imgs;					//图片资源ID数组
+    private int[] imgs;                    //图片资源ID数组
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,9 +80,14 @@ public class ShopActivity extends BaseActivity {
 
         li = LayoutInflater.from(this);
         indicator = (TabPageIndicator) findViewById(R.id.indicator_title);
-
-        gvBeanPagershopconcent= getAcacheData(TAG_SELECT_FOODS);
-        svAdapterShopPager = new GridViewAdapter(this,gvBeanPagershopconcent);
+        imageurl = new ArrayList<String>();
+        imageurl.add(getIntent().getExtras().getString("shop_image"));
+        imageurl.add(getIntent().getExtras().getString("shop_image1"));
+        imageurl.add(getIntent().getExtras().getString("shop_image2"));
+        imageurl.add(getIntent().getExtras().getString("shop_image3"));
+        imageurl.add(getIntent().getExtras().getString("shop_image4"));
+        gvBeanPagershopconcent = getAcacheData(TAG_SELECT_FOODS);
+        svAdapterShopPager = new GridViewAdapter(this, gvBeanPagershopconcent);
 
 //       通过网络获取服务器数据
         NMParameters paramsleft = new NMParameters();
@@ -95,24 +102,25 @@ public class ShopActivity extends BaseActivity {
         initcomment();
 
     }
-//    初始化头部的图片
-    private  void initViewPager(){
-        if(allListView != null){
+
+    //    初始化头部的图片
+    private void initViewPager() {
+        if (allListView != null) {
             allListView.clear();
             allListView = null;
         }
         allListView = new ArrayList<View>();
-        for(int i=0; i<resId.length;i++){
+        for (int i = 0; i < imageurl.size(); i++) {
             View view = LayoutInflater.from(this).inflate(R.layout.pic_item, null);
             ImageView imageView = (ImageView) view.findViewById(R.id.pic_item);
-            imageView.setImageResource(resId[i]);
+            new LoadImage(this).loadDrawable(imageurl.get(i), imageView);
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
                     //跳转到查看大图页面
                     Intent intent = new Intent(ShopActivity.this, ShowBigPictrue.class);
                     intent.putExtra("position", position);
-                    intent.putExtra("requsetActivity","shop");
+                    intent.putExtra("requsetActivity", "shop");
                     startActivity(intent);
                 }
             });
@@ -124,13 +132,14 @@ public class ShopActivity extends BaseActivity {
 
             @Override
             public void onPageSelected(int arg0) {
-                position=arg0;
+                position = arg0;
             }
 
             @Override
             public void onPageScrolled(int arg0, float arg1, int arg2) {
 
             }
+
             @Override
             public void onPageScrollStateChanged(int arg0) {
 
@@ -138,6 +147,7 @@ public class ShopActivity extends BaseActivity {
         });
         viewPager.setAdapter(adapter);
     }
+
     private class ViewPagerAdapter extends PagerAdapter {
 
         @Override
@@ -162,22 +172,23 @@ public class ShopActivity extends BaseActivity {
             return view;
         }
     }
-/**
- * viewpager引导条的设置和viewpager的填充
- */
-    public void initShopContent(){
-        viewList =new ArrayList<View>();
-        gvShopFoods = li.inflate(R.layout.activity_shop2_foods,null);
+
+    /**
+     * viewpager引导条的设置和viewpager的填充
+     */
+    public void initShopContent() {
+        viewList = new ArrayList<View>();
+        gvShopFoods = li.inflate(R.layout.activity_shop2_foods, null);
         lvShopComment = li.inflate(R.layout.activity_shop2_comments, null);
         viewList.add(gvShopFoods);
         viewList.add(lvShopComment);
 
-        titleList=new ArrayList<String>();
+        titleList = new ArrayList<String>();
         titleList.add("食品");
         titleList.add("评论");
 
-        pager=(ViewPager) findViewById(R.id.pager_shop_content);
-        ViewshopPagerAdapter adapter=new ViewshopPagerAdapter(viewList,titleList);
+        pager = (ViewPager) findViewById(R.id.pager_shop_content);
+        ViewshopPagerAdapter adapter = new ViewshopPagerAdapter(viewList, titleList);
         pager.setAdapter(adapter);
         indicator = (TabPageIndicator) findViewById(R.id.indicator_title);
         indicator.setViewPager(pager);
@@ -199,8 +210,9 @@ public class ShopActivity extends BaseActivity {
             }
         });
     }
-//    对食物进行填充
-    private void initfoods(){
+
+    //    对食物进行填充
+    private void initfoods() {
         MyGridView foodsGridView = (MyGridView) gvShopFoods.findViewById(R.id.shop_foods);
         foodsGridView.setAdapter(svAdapterShopPager);
         foodsGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -212,29 +224,31 @@ public class ShopActivity extends BaseActivity {
             }
         });
     }
-//    对评论进行填充
-    private void initcomment(){
+
+    //    对评论进行填充
+    private void initcomment() {
         listView = (com.r_time_run.newmess.view.MyListView) lvShopComment.findViewById(R.id.listView_Detail);
         listView.setFocusable(false);
         listView.setSelector(new ColorDrawable(Color.TRANSPARENT));
-        adapter=new Adapter_ListView_detail(this,getCommentData(),R.layout.adapter_listview_detail,handler);
+        adapter = new Adapter_ListView_detail(this, getCommentData(), R.layout.adapter_listview_detail, handler);
         listView.setAdapter(adapter);
     }
+
     /**
      * 获取评论列表数据
      */
-    private List<CommentBean> getCommentData(){
-        imgs = new int[]{R.drawable.baby_detail,R.drawable.baby_detail,
-                R.drawable.baby_detail,R.drawable.baby_detail};
+    private List<CommentBean> getCommentData() {
+        imgs = new int[]{R.drawable.baby_detail, R.drawable.baby_detail,
+                R.drawable.baby_detail, R.drawable.baby_detail};
         list = new ArrayList<CommentBean>();
         count = imgs.length;
-        for(int i=0;i<imgs.length;i++){
+        for (int i = 0; i < imgs.length; i++) {
             CommentBean bean = new CommentBean();
-            bean.setId(i+1);
+            bean.setId(i + 1);
             bean.setCommentImgId(imgs[i]);
-            bean.setCommentNickname("昵称"+i);
-            bean.setCommentTime("13:"+i+"5");
-            bean.setCommnetAccount("12345"+i);
+            bean.setCommentNickname("昵称" + i);
+            bean.setCommentTime("13:" + i + "5");
+            bean.setCommnetAccount("12345" + i);
             bean.setCommentContent("评论内容评论内容评论内容");
             bean.setReplyList(getReplyData());
             list.add(bean);
@@ -244,24 +258,25 @@ public class ShopActivity extends BaseActivity {
     /**
      * 获取回复列表数据
      */
-    private List<ReplyBean> getReplyData(){
+    private List<ReplyBean> getReplyData() {
         List<ReplyBean> replyList = new ArrayList<ReplyBean>();
         return replyList;
     }
     @SuppressLint("HandlerLeak")
-    private android.os.Handler handler = new android.os.Handler(){
+    private android.os.Handler handler = new android.os.Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
-            if(msg.what == 10){
-                position = (Integer)msg.obj;
+            if (msg.what == 10) {
+                position = (Integer) msg.obj;
                 replyComment();
             }
         }
     };
-    private void replyComment(){
+
+    private void replyComment() {
         ReplyBean bean = new ReplyBean();
-        bean.setId(count+10);
+        bean.setId(count + 10);
         bean.setCommentNickname(list.get(position).getCommentNickname());
         bean.setReplyNickname("我是商家");
         bean.setReplyContent("这位同学说的很对 哈哈哈哈哈哈哈哈哈哈啊哈哈");
@@ -273,10 +288,10 @@ public class ShopActivity extends BaseActivity {
     /**
      * 获取foods缓存数据
      */
-    private ArrayList getAcacheData(int TAG){
+    private ArrayList getAcacheData(int TAG) {
         ACache aCache = ACache.get(this);
         String json = aCache.getAsString(TAG + "");
-        if(TAG==TAG_SELECT_FOODS){
+        if (TAG == TAG_SELECT_FOODS) {
             ArrayList<FoodsBean> listBean = JSONUtil.getFoodsJson(json);
             return listBean;
         }
@@ -284,9 +299,7 @@ public class ShopActivity extends BaseActivity {
     }
 
     /**
-     *
      * 对comment页进行填充
-     *
      **/
 
     @Override

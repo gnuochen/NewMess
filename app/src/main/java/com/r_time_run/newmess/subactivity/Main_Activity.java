@@ -83,8 +83,6 @@ public class Main_Activity extends BaseActivity {
         gvBeanPagerOneconcent = getAcacheData(TAG_SELECT_FOODS);
         lvBeanPagerThreeconcent = getAcacheData(TAG_SELECT_SHOPS);
 
-
-
         //        初始化三个viewPager页面的显示页面对象
         viewLayout = new View[3];
         initeLayout();
