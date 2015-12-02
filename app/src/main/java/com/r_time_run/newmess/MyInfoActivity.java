@@ -59,7 +59,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
     private SharedPreferences sp;       //下次打开时显示上次的账号和密码
     public static Boolean registeToFirst = false;
     public static Boolean isLogined = false;       //判断是否已经登录
-    private String isLoginState;            //返回的登录状态码
+    private boolean isLoginState;            //返回的登录状态码
 
     private EditText et_user_name, et_user_password;
     private CheckBox cb_remery_user_password;
@@ -220,7 +220,7 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
         }
         loginParames.add("login", jsonObject.toString());
 
-        getData(TAG_LOGIN, Constant.URL_FOODS, loginParames, "POST");
+        getData(TAG_LOGIN, Constant.URL_FOODS_TEXT, loginParames, "POST");
     }
 
     @Override
@@ -267,6 +267,9 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
             case R.id.bt_login_text:        //停止登录
                 ll_wait_login.setVisibility(View.GONE);
                 ll_login_content.setVisibility(View.VISIBLE);
+                SharedPreferences.Editor editor1 = sp.edit();
+                editor1.putBoolean("islogined", false);      //是否已登录
+                editor1.commit();
                 break;
         }
     }
@@ -318,8 +321,8 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
         try {
             JSONObject obj = new JSONObject(json);
             if (msg.what == TAG_LOGIN) {
-                isLoginState = obj.getString("state");
-                if (isLoginState.equals("0x00")) {
+                isLoginState = obj.getBoolean("state");
+                if (isLoginState) {
                     ll_login_content.setVisibility(View.VISIBLE);
                     isLogined = true;       //登录成功
                     remeryUserPassword();               //是否记住密码
@@ -341,12 +344,9 @@ public class MyInfoActivity extends BaseActivity implements View.OnClickListener
                             }
                         }
                     }, 300);
-                } else if (isLoginState.equals("0x02")){
+                } else{
                     Log.e("MyInfoActivity","密码错误");
                     Toast.makeText(MyInfoActivity.this,"密码错误",Toast.LENGTH_SHORT).show();
-                } else if (isLoginState.equals("0x01")){
-                    Log.e("MyInfoActivity","账号错误");
-                    Toast.makeText(MyInfoActivity.this,"账号错误",Toast.LENGTH_SHORT).show();
                 }
             }
         } catch (JSONException e) {
